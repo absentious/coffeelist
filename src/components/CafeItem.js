@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
+import { connect } from 'react-redux';
+import * as actions from '../redux/actions';
 import CafeNeighborhood from './CafeNeighborhood';
 import CafeAttributes from './CafeAttributes';
 import CafeName from './CafeName';
@@ -44,7 +46,7 @@ class CafeItem extends Component {
     }
 
     displayHorizontalAttributes() {
-        if (this.state.expanded == false) {
+        if (this.props.selected == false) {
             return <CafeAttributes 
                 outlets={this.state.cafe.attributes.outlets}
                 coffee={this.state.cafe.attributes.coffee}
@@ -57,7 +59,7 @@ class CafeItem extends Component {
     }
 
     displayVerticalAttributes() {
-        if (this.state.expanded == true) {
+        if (this.props.selected == true) {
             return <CafeAttributes 
                 outlets={this.state.cafe.attributes.outlets}
                 coffee={this.state.cafe.attributes.coffee}
@@ -69,11 +71,20 @@ class CafeItem extends Component {
         return;
     }
 
+    selectionProcess() {
+        if (this.props.selected) {
+            this.props.clearCafe()
+        }
+        else {
+            this.props.selectCafe(this.state.cafe.name)
+        }
+    }
+
     render () {
 
         return (
             <div class='cafeRow_container'>
-                <div class='cafeRow' onClick={this.expand.bind(this)}>
+                <div class='cafeRow' onClick={this.selectionProcess.bind(this)}>
                     <div class='cafeNeighborhood'>
                         <CafeNeighborhood neighborhood={this.state.cafe.neighborhood} />
                     </div>
@@ -83,7 +94,7 @@ class CafeItem extends Component {
                     {this.displayHorizontalAttributes()}
                     <div class='cafeArrow_container'>
                         <div class='cafeArrow'>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -92,4 +103,11 @@ class CafeItem extends Component {
     }
 }
 
-export default CafeItem;
+const mapStateToProps = (state, ownProps) => {
+    const selected = ownProps.cafe.name === state.selectedName;
+    return { selected };
+};
+
+
+
+export default connect(mapStateToProps, actions)(CafeItem);

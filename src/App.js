@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore } from 'redux';
+import reducers from './redux/reducers';
 import firebase from 'firebase';
 import logo from './logo.svg';
 import './App.css';
@@ -22,7 +23,7 @@ class App extends Component {
 
     render() {
         return (
-            
+            <Provider store={createStore(reducers)}>
                 <div className="App">
                     <div class='s_allContent'>
                         <div class='s_topSpace'>
@@ -36,7 +37,7 @@ class App extends Component {
                         </div>
                     </div>
                 </div>
-            
+            </Provider>
         );
     }
 }
