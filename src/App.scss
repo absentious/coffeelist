@@ -1,0 +1,18 @@
+@import "styles/vars";
+@import "styles/sections";
+@import "styles/text";
+@import "styles/searchBox";
+@import "styles/cafe";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    color: $color-theme-0;
+    font-family: 'Overpass Mono','Courier New', Courier, monospace;
+    font-size: 18px;
+    position: relative;
+}

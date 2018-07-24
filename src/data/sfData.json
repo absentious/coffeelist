@@ -1,0 +1,85 @@
+{
+    "name": "coffeelist_sf",
+    "cafes": [
+        {
+            "name": "Sightglass Coffee",
+            "address": {
+                "street": "270 7th St",
+                "street2": "",
+                "citystate": "San Francisco, CA",
+                "zip": "94121"
+            },
+            "neighborhood": "SOMA",
+            "attributes": {
+                "outlets": 0,
+                "wifi": 0,
+                "coffee": 1,
+                "food": 0
+            }
+        },
+        {
+            "name": "Garden House Cafe",
+            "address": {
+                "street": "3117 Clement St",
+                "street2": "",
+                "citystate": "San Francisco, CA",
+                "zip": "94121"
+            },
+            "neighborhood": "Inner Richmond",
+            "attributes": {
+                "outlets": 2,
+                "wifi": 1,
+                "coffee": 0,
+                "food": 1
+            }
+        },
+        {
+            "name": "Oakside Cafe",
+            "address": {
+                "street": "270 7th St",
+                "street2": "",
+                "citystate": "San Francisco, CA",
+                "zip": "94121"
+            },
+            "neighborhood": "SOMA",
+            "attributes": {
+                "outlets": 1,
+                "wifi": 0,
+                "coffee": 1,
+                "food": 1
+            }
+        },
+        {
+            "name": "Vinyl Coffee & Wine Bar",
+            "address": {
+                "street": "270 7th St",
+                "street2": "",
+                "citystate": "San Francisco, CA",
+                "zip": "94121"
+            },
+            "neighborhood": "NOPA",
+            "attributes": {
+                "outlets": 1,
+                "wifi": 0,
+                "coffee": 1,
+                "food": 1
+            }
+        },
+        {
+            "name": "The Mill",
+            "address": {
+                "street": "270 7th St",
+                "street2": "",
+                "citystate": "San Francisco, CA",
+                "zip": "94121"
+            },
+            "neighborhood": "NOPA",
+            "attributes": {
+                "outlets": 0,
+                "wifi": 0,
+                "coffee": 1,
+                "food": 0
+            }
+        }
+    ]
+}
