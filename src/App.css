@@ -59,6 +59,12 @@
   flex-direction: row;
 }
 
+.cafeNeighborhood-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .cafeNeighborhood {
   display: flex;
   flex-direction: row;
@@ -97,6 +103,19 @@
   color: #694B4B;
 }
 
+.cafeAddress {
+  margin-right: 32px;
+}
+
+.cafeAddress_text {
+  padding-top: 8px;
+  font-family: "Rubik", monospace;
+  font-size: 16px;
+  color: #694B4B;
+  text-align: right;
+  letter-spacing: 0.1rem;
+}
+
 .cafeAttributes_container {
   margin-left: 32px;
   margin-right: 16px;
@@ -110,6 +129,7 @@
   flex-direction: column;
   margin-top: 32px;
   margin-bottom: 16px;
+  padding-left: 32px;
 }
 
 .cafeAttributes_vertical_text {

@@ -25,7 +25,7 @@ class CafeItem extends Component {
         var tname = this.state.cafe.name;
         console.log(tname);
         var expandState = true;
-        if (this.state.expanded == true) {
+        if (this.state.expanded) {
             expandState = false;
         }
         this.setState({ expanded: expandState })
@@ -59,7 +59,7 @@ class CafeItem extends Component {
     }
 
     displayVerticalAttributes() {
-        if (this.props.selected == true) {
+        if (this.props.selected) {
             return <CafeAttributes 
                 outlets={this.state.cafe.attributes.outlets}
                 coffee={this.state.cafe.attributes.coffee}
@@ -69,6 +69,20 @@ class CafeItem extends Component {
             />;
         }
         return;
+    }
+
+    displayAddress() {
+        if (this.props.selected) {
+            return (
+                <div class='cafeAddress'>
+                    <p class='cafeAddress_text'>
+                        {this.state.cafe.address.street} <br />
+                        {this.state.cafe.address.citystate} <br />
+                        {this.state.cafe.address.zip}
+                    </p>
+                </div>
+            )
+        }
     }
 
     selectionProcess() {
@@ -85,8 +99,11 @@ class CafeItem extends Component {
         return (
             <div class='cafeRow_container'>
                 <div class='cafeRow' onClick={this.selectionProcess.bind(this)}>
-                    <div class='cafeNeighborhood'>
-                        <CafeNeighborhood neighborhood={this.state.cafe.neighborhood} />
+                    <div class='cafeNeighborhood_container'>
+                        <div class='cafeNeighborhood'>
+                            <CafeNeighborhood neighborhood={this.state.cafe.neighborhood} />
+                        </div>
+                        {this.displayAddress()}
                     </div>
                     <CafeName name={this.state.cafe.name}>
                         {this.displayVerticalAttributes()}
