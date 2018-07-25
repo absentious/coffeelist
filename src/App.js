@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import reducers from './redux/reducers';
 import firebase from 'firebase';
+import ReduxThunk from 'redux-thunk';
 import logo from './logo.svg';
 import './App.css';
 import CafeList from './components/CafeList';
@@ -23,12 +24,12 @@ class App extends Component {
 
     render() {
         return (
-            <Provider store={createStore(reducers)}>
+            <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
                 <div className="App">
                     <div class='s_allContent'>
                         <div class='s_topSpace'>
                             <div class='s_header'>
-                                <p class='t_header'>coffeelist_sf</p>
+                                <p class='t_header'>☕ coffeelist_sf</p>
                             </div>
                             <div class='s_search searchBox'>
                         
