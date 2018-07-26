@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
@@ -13,40 +14,24 @@ class CafeItem extends Component {
 
         this.state = {
             cafe: {},
+            name: "",
+            neighborhood: "",
             expanded: false
         }
     }
 
+    componentWillReceiveProps(newProps) {
+        this.setState({ cafe: _.clone(newProps.cafe, true), name: newProps.cafe.name, neighborhood: newProps.cafe.neighborhood });
+    }
+
     componentWillMount() {
-        this.setState({ cafe: this.props.cafe })
-    }
-
-    expand() {
-        var tname = this.state.cafe.name;
-        console.log(tname);
-        var expandState = true;
-        if (this.state.expanded) {
-            expandState = false;
-        }
-        this.setState({ expanded: expandState })
-    }
-
-    displayExpandedVerticalSpace() {
-        if (this.state.expanded == true) {
-            return <div class='cafe_expandedVerticalSpace'></div>
-        }
-        return;
-    }
-
-    displayLeftPadding() {
-        if (this.state.expanded == true) {
-            return <div class='cafe_expandedPadding'></div>
-        }
-        return;
+        this.setState({ cafe: this.props.cafe, name: this.props.cafe.name, neighborhood: this.props.cafe.neighborhood });
     }
 
     displayHorizontalAttributes() {
+        console.log("displayAttr1");
         if (this.props.selected == false) {
+            console.log(this.state.cafe.attributes.outlets);
             return <CafeAttributes 
                 outlets={this.state.cafe.attributes.outlets}
                 coffee={this.state.cafe.attributes.coffee}
@@ -95,17 +80,17 @@ class CafeItem extends Component {
     }
 
     render () {
-
+        console.log("rendering");
         return (
             <div class='cafeRow_container'>
                 <div class='cafeRow' onClick={this.selectionProcess.bind(this)}>
                     <div class='cafeNeighborhood_container'>
                         <div class='cafeNeighborhood'>
-                            <CafeNeighborhood neighborhood={this.state.cafe.neighborhood} />
+                            <CafeNeighborhood neighborhood={this.state.neighborhood} sort={this.props.sortFlag} />
                         </div>
                         {this.displayAddress()}
                     </div>
-                    <CafeName name={this.state.cafe.name}>
+                    <CafeName name={this.state.name}>
                         {this.displayVerticalAttributes()}
                     </CafeName>
                     {this.displayHorizontalAttributes()}
@@ -122,7 +107,8 @@ class CafeItem extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     const selected = ownProps.cafe.name === state.selectedName;
-    return { selected };
+    const sortFlag = state.sortFlag;
+    return { selected, sortFlag };
 };
 
 

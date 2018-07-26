@@ -32,14 +32,14 @@ class CafeAttributes extends Component {
             return <CafeAttributes_Item 
                 colorClass={AttrObj.color}
                 svgData={AttrObj.svg}
-                size="28"
+                size="20"
             />
         return (
             <div class='cafeAttributes_vertical_row'>
                 <CafeAttributes_Item 
                     colorClass={AttrObj.color}
                     svgData={AttrObj.svg}
-                    size="28"
+                    size="20"
                 />
                 <p class='cafeAttributes_vertical_text'>{AttrObj.label}</p>
             </div>
