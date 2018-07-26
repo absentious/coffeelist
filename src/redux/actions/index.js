@@ -29,9 +29,17 @@ export const cafeFetch = () => {
     };
 };
 
-export const listsort = (sortKey) => {
-    return {
-        type: 'cafe_sort',
-        payload: sortKey
+export const listsort = (sortKey, nested) => {
+    if (nested) {
+        return {
+            type: 'cafe_sort_inner',
+            payload: sortKey
+        }
+    }
+    else {
+        return {
+            type: 'cafe_sort',
+            payload: sortKey
+        }
     }
 }
