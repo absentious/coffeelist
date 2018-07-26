@@ -18,6 +18,10 @@
     text-decoration: underline;
 }
 
+.mapMarker:hover .cafeName_text {
+    text-decoration: underline;
+}
+
 .cafeNeighborhood-container {
     display: flex;
     flex-direction: column;

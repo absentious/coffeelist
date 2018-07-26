@@ -6,6 +6,7 @@ import CafeItem from './CafeItem';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
+import MarkerWrapper from './MarkerWrapper';
 
 const MAPAPIKEY = "AIzaSyCOVCDo4noFBDxGblbuw8XUomeXGo3AEXE";
 
@@ -14,7 +15,7 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
         defaultZoom={11}
         defaultCenter={{ lat: 37.7749, lng: -122.4194 }}
     >
-        {props.cafes.map(item => <Marker position={{ lat: item.lat, lng: item.lng }} />)}
+        {props.cafes.map(item => <MarkerWrapper cafe={item} />)}
         
     </GoogleMap>
 ))
