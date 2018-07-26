@@ -6,7 +6,6 @@ import CafeItem from './CafeItem';
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
 
-
 class Search extends Component {
     constructor () {
         super()
@@ -16,13 +15,12 @@ class Search extends Component {
     }
 
     tempClick() {
-        this.props.listsort("attributes");
+        this.props.listsort("coffee", true);
     }
 
     render () {
         return (
-            <div class='s_search searchBox' onClick={this.tempClick.bind(this)}>
-            </div>
+            <div class='s_search searchBox' onClick={this.tempClick.bind(this)}></div>
         )
     }
 }

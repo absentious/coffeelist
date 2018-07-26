@@ -8,6 +8,7 @@ import logo from './logo.svg';
 import './App.css';
 import CafeList from './components/CafeList';
 import Search from './components/Search';
+import SortBar from './components/SortBar';
 
 class App extends Component {
 
@@ -33,6 +34,7 @@ class App extends Component {
                                 <p class='t_header'>☕ coffeelist_sf</p>
                             </div>
                             <Search />
+                            <SortBar />
                             <CafeList />
                         </div>
                     </div>
