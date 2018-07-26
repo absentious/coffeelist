@@ -15,7 +15,7 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
         defaultZoom={11}
         defaultCenter={{ lat: 37.7749, lng: -122.4194 }}
     >
-        {props.cafes.map(item => <MarkerWrapper cafe={item} />)}
+        {props.cafes.map(item => <MarkerWrapper cafe={item} key={item.name}/>)}
         
     </GoogleMap>
 ))
