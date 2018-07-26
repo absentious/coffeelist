@@ -28,3 +28,10 @@ export const cafeFetch = () => {
             });
     };
 };
+
+export const listsort = (sortKey) => {
+    return {
+        type: 'cafe_sort',
+        payload: sortKey
+    }
+}

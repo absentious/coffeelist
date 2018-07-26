@@ -7,6 +7,7 @@ import ReduxThunk from 'redux-thunk';
 import logo from './logo.svg';
 import './App.css';
 import CafeList from './components/CafeList';
+import Search from './components/Search';
 
 class App extends Component {
 
@@ -31,9 +32,7 @@ class App extends Component {
                             <div class='s_header'>
                                 <p class='t_header'>☕ coffeelist_sf</p>
                             </div>
-                            <div class='s_search searchBox'>
-                        
-                            </div>
+                            <Search />
                             <CafeList />
                         </div>
                     </div>

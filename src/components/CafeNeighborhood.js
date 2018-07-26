@@ -6,19 +6,20 @@ class CafeNeighborhood extends Component {
         super()
 
         this.state = {
-            neighborhood: {}
+            neighborhood: "",
+            sortFlag: ""
         }
     }
 
     componentWillMount() {
-        this.setState({ neighborhood: this.props.neighborhood })
+        this.setState({ neighborhood: this.props.neighborhood, sortFlag: this.props.sortFlag })
     }
 
     render () {
 
         return (
             <div class='cafeNeighborhood_bg'>
-                <p class='cafeNeighborhood_text'>{this.state.neighborhood}</p>
+                <p class='cafeNeighborhood_text'>{this.state.neighborhood}{this.state.sortFlag}</p>
             </div>
         )
     }

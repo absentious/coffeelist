@@ -9,7 +9,10 @@ import * as actions from '../redux/actions';
 
 class CafeList extends Component {
     constructor () {
-        super()
+        super();
+    }
+
+    componentWillReceiveProps(newProps) {
     }
 
     componentWillMount() {
@@ -19,13 +22,14 @@ class CafeList extends Component {
     render () {
         return (
             <div class='s_list'>
-                {this.props.cafes.map(item => <CafeItem cafe={item} />)}
+                {this.props.cafes.map(item => <CafeItem cafe={item} key={item.name}/>)}
             </div>
         )
     }
 }
 
 const mapStateToProps = state => {
+    console.log(state);
     const cafes = _.map(state.cafes, (val, uid) => {
         return { ...val, uid };
     });
