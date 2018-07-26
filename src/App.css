@@ -1,13 +1,29 @@
 @import url("https://fonts.googleapis.com/css?family=Overpass+Mono:400,600,700|Rubik:400,500");
 .s_allContent {
-  max-width: 40rem;
-  width: 40rem;
   margin-left: 120px;
   margin-right: auto;
 }
 
+.s_splitscreen {
+  display: flex;
+  flex-direction: row;
+}
+
 .s_topSpace {
   margin-top: 120px;
+}
+
+.s_main {
+  max-width: 40rem;
+  width: 40rem;
+}
+
+.s_map {
+  width: 30rem;
+  max-width: 30rem;
+  margin-left: 48px;
+  margin-top: 48px;
+  padding-top: 48px;
 }
 
 .s_header {

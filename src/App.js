@@ -9,8 +9,16 @@ import './App.css';
 import CafeList from './components/CafeList';
 import Search from './components/Search';
 import SortBar from './components/SortBar';
+import MapWrapper from './components/MapWrapper';
+
+const MAPAPIKEY = "AIzaSyCOVCDo4noFBDxGblbuw8XUomeXGo3AEXE";
 
 class App extends Component {
+
+    constructor() {
+        super();
+        
+    }
 
     componentWillMount() {
         const config = {
@@ -30,12 +38,18 @@ class App extends Component {
                 <div className="App">
                     <div class='s_allContent'>
                         <div class='s_topSpace'>
-                            <div class='s_header'>
-                                <p class='t_header'>☕ coffeelist_sf</p>
+                            <div class='s_splitscreen'>
+                                <div class='s_main'>
+                                    <div class='s_header'>
+                                        <p class='t_header'>☕ coffeelist_sf</p>
+                                    </div>
+                                    <SortBar />
+                                    <CafeList />
+                                </div>
+                                <div class='s_map'>
+                                    <MapWrapper />
+                                </div>
                             </div>
-                            <Search />
-                            <SortBar />
-                            <CafeList />
                         </div>
                     </div>
                 </div>

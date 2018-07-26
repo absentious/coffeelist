@@ -15,7 +15,9 @@
                 "wifi": 0,
                 "coffee": 1,
                 "food": 0
-            }
+            },
+            "lat": 37.776869,
+            "lng": -122.40863209999998
         },
         {
             "name": "Garden House Cafe",
@@ -31,31 +33,35 @@
                 "wifi": 1,
                 "coffee": 0,
                 "food": 1
-            }
+            },
+            "lat": 37.7814847,
+            "lng": -122.49271069999998
         },
         {
             "name": "Oakside Cafe",
             "address": {
-                "street": "270 7th St",
+                "street": "1195 Oak St",
                 "street2": "",
                 "citystate": "San Francisco, CA",
-                "zip": "94121"
+                "zip": "94117"
             },
-            "neighborhood": "SOMA",
+            "neighborhood": "NOPA",
             "attributes": {
                 "outlets": 1,
                 "wifi": 0,
-                "coffee": 1,
+                "coffee": 0,
                 "food": 1
-            }
+            },
+            "lat": 37.77283509999999,
+            "lng": -122.43891350000001
         },
         {
             "name": "Vinyl Coffee & Wine Bar",
             "address": {
-                "street": "270 7th St",
+                "street": "359 Divisadero St",
                 "street2": "",
                 "citystate": "San Francisco, CA",
-                "zip": "94121"
+                "zip": "94117"
             },
             "neighborhood": "NOPA",
             "attributes": {
@@ -63,15 +69,17 @@
                 "wifi": 0,
                 "coffee": 1,
                 "food": 1
-            }
+            },
+            "lat": 37.7730052,
+            "lng": -122.43757679999999
         },
         {
             "name": "The Mill",
             "address": {
-                "street": "270 7th St",
+                "street": "736 Divisadero St",
                 "street2": "",
                 "citystate": "San Francisco, CA",
-                "zip": "94121"
+                "zip": "94117"
             },
             "neighborhood": "NOPA",
             "attributes": {
@@ -79,7 +87,9 @@
                 "wifi": 0,
                 "coffee": 1,
                 "food": 0
-            }
+            },
+            "lat": 37.776466,
+            "lng": -122.43783239999999
         }
     ]
 }
