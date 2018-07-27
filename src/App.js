@@ -44,6 +44,10 @@ class App extends Component {
                                         <p class='t_header'>☕ coffeelist_sf</p>
                                     </div>
                                     <SortBar />
+                                </div>
+                            </div>
+                            <div class='s_splitscreen'>
+                                <div class='s_main'>
                                     <CafeList />
                                 </div>
                                 <div class='s_map'>
