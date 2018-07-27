@@ -35,7 +35,7 @@ class MarkerWrapper extends Component {
                 <Marker 
                     onClick={this.selectionProcess.bind(this)}
                     icon={{ 
-                        url: "http://maps.google.com/mapfiles/ms/icons/red.png",
+                        url: "http://ayh.io/images/pin_red.png",
                         scale: 3 
                     }}
                     position={{ lat: this.state.cafe.lat, lng: this.state.cafe.lng }} 
@@ -47,8 +47,8 @@ class MarkerWrapper extends Component {
                 <Marker 
                     onClick={this.selectionProcess.bind(this)}
                     icon={{ 
-                        url: "http://maps.google.com/mapfiles/ms/icons/blue.png",
-                        scale: 3 
+                        url: "http://ayh.io/images/pin_grey.png",
+                        scale: 2
                     }}
                     position={{ lat: this.state.cafe.lat, lng: this.state.cafe.lng }} 
                 />

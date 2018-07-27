@@ -19,11 +19,8 @@
 }
 
 .s_map {
-  width: 30rem;
+  width: 40rem;
   max-width: 30rem;
-  margin-left: 48px;
-  margin-top: 48px;
-  padding-top: 48px;
 }
 
 .s_header {
@@ -76,6 +73,10 @@
 }
 
 .cafeRow:hover .cafeName_text {
+  text-decoration: underline;
+}
+
+.mapMarker:hover .cafeName_text {
   text-decoration: underline;
 }
 
