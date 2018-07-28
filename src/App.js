@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import Modal from 'react-responsive-modal';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducers from './redux/reducers';
@@ -10,6 +12,7 @@ import CafeList from './components/CafeList';
 import Search from './components/Search';
 import SortBar from './components/SortBar';
 import MapWrapper from './components/MapWrapper';
+import AddCafeModal from './components/AddCafeModal';
 
 const MAPAPIKEY = "AIzaSyCOVCDo4noFBDxGblbuw8XUomeXGo3AEXE";
 
@@ -17,7 +20,10 @@ class App extends Component {
 
     constructor() {
         super();
-        
+
+        this.state = {
+            open: false
+        }
     }
 
     componentWillMount() {
@@ -32,6 +38,14 @@ class App extends Component {
         firebase.initializeApp(config);
     }
 
+    onOpenModal = () => {
+        this.setState({ open: true });
+    };
+    
+    onCloseModal = () => {
+        this.setState({ open: false });
+    };
+
     render() {
         return (
             <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
@@ -42,6 +56,12 @@ class App extends Component {
                                 <div class='s_main'>
                                     <div class='s_header'>
                                         <p class='t_header'>☕ coffeelist_sf</p>
+                                    </div>
+                                    <div>
+                                        <button onClick={this.onOpenModal}>Open modal</button>
+                                        <Modal open={this.state.open} onClose={this.onCloseModal} center>
+                                            <AddCafeModal />
+                                        </Modal>
                                     </div>
                                     <SortBar />
                                 </div>

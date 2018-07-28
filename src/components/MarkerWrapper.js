@@ -1,8 +1,6 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
 import '../App.css';
-import listData from '../data/sfData.json'
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+import { Marker } from "react-google-maps";
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
 

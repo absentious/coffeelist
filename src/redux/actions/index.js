@@ -43,3 +43,10 @@ export const listsort = (sortKey, nested) => {
         }
     }
 }
+
+export const selectModalAttr = (attr, selection) => {
+    return {
+        type: 'selectModalAttr',
+        payload: { attr: attr, selection: selection }
+    }
+}

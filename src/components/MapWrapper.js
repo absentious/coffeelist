@@ -16,57 +16,17 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
         defaultCenter={{ lat: 37.7749, lng: -122.4194 }}
         options={{ styles: [
             {
-                "featureType": "poi",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
-            },
-            {
-                "stylers": [
-                    {
-                        "saturation": -70
-                    },
-                    {
-                        "lightness": 37
-                    },
-                    {
-                        "gamma": 1.15
-                    }
-                ]
-            },
-            {
+                "featureType": "landscape",
                 "elementType": "labels",
                 "stylers": [
                     {
-                        "gamma": 0.26
-                    },
-                    {
                         "visibility": "off"
                     }
                 ]
             },
             {
-                "featureType": "road",
-                "stylers": [
-                    {
-                        "lightness": 0
-                    },
-                    {
-                        "saturation": 0
-                    },
-                    {
-                        "hue": "#ffffff"
-                    },
-                    {
-                        "gamma": 0
-                    }
-                ]
-            },
-            {
-                "featureType": "road",
-                "elementType": "labels.text.stroke",
+                "featureType": "transit",
+                "elementType": "labels",
                 "stylers": [
                     {
                         "visibility": "off"
@@ -74,55 +34,66 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
                 ]
             },
             {
-                "featureType": "road.arterial",
-                "elementType": "geometry",
+                "featureType": "poi",
+                "elementType": "labels",
                 "stylers": [
                     {
-                        "lightness": 20
+                        "visibility": "off"
                     }
                 ]
             },
             {
-                "featureType": "road.highway",
-                "elementType": "geometry",
+                "featureType": "water",
+                "elementType": "labels",
                 "stylers": [
                     {
-                        "lightness": 50
-                    },
-                    {
-                        "saturation": 0
-                    },
-                    {
-                        "hue": "#ffffff"
+                        "visibility": "off"
                     }
                 ]
             },
             {
-                "featureType": "administrative.province",
+                "featureType": "road",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "stylers": [
+                    {
+                        "hue": "#00aaff"
+                    },
+                    {
+                        "saturation": -100
+                    },
+                    {
+                        "gamma": 2.15
+                    },
+                    {
+                        "lightness": 12
+                    }
+                ]
+            },
+            {
+                "featureType": "road",
+                "elementType": "labels.text.fill",
                 "stylers": [
                     {
                         "visibility": "on"
                     },
                     {
-                        "lightness": -50
+                        "lightness": 24
                     }
                 ]
             },
             {
-                "featureType": "administrative.province",
-                "elementType": "labels.text.stroke",
+                "featureType": "road",
+                "elementType": "geometry",
                 "stylers": [
                     {
-                        "visibility": "off"
-                    }
-                ]
-            },
-            {
-                "featureType": "administrative.province",
-                "elementType": "labels.text",
-                "stylers": [
-                    {
-                        "lightness": 20
+                        "lightness": 57
                     }
                 ]
             }

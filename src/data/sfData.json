@@ -48,7 +48,7 @@
             "neighborhood": "NOPA",
             "attributes": {
                 "outlets": 1,
-                "wifi": 0,
+                "wifi": 1,
                 "coffee": 0,
                 "food": 1
             },
@@ -66,7 +66,7 @@
             "neighborhood": "NOPA",
             "attributes": {
                 "outlets": 1,
-                "wifi": 0,
+                "wifi": 1,
                 "coffee": 1,
                 "food": 1
             },
@@ -90,6 +90,42 @@
             },
             "lat": 37.776466,
             "lng": -122.43783239999999
+        },
+        {
+            "name": "Haus Coffee",
+            "address": {
+                "street": "3086 24th St",
+                "street2": "",
+                "citystate": "San Francisco, CA",
+                "zip": "94110"
+            },
+            "neighborhood": "NOPA",
+            "attributes": {
+                "outlets": 2,
+                "wifi": 2,
+                "coffee": 1,
+                "food": 0
+            },
+            "lat": 37.752635,
+            "lng": -122.41372860000001
+        },
+        {
+            "name": "Haus Coffee",
+            "address": {
+                "street": "3086 24th St",
+                "street2": "",
+                "citystate": "San Francisco, CA",
+                "zip": "94110"
+            },
+            "neighborhood": "NOPA",
+            "attributes": {
+                "outlets": 2,
+                "wifi": 2,
+                "coffee": 1,
+                "food": 0
+            },
+            "lat": 37.752635,
+            "lng": -122.41372860000001
         }
     ]
 }
