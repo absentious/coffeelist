@@ -30,14 +30,14 @@ class CafeAttributes extends Component {
         var AttrObj = iconData[attr][this.state[attr]];
         if (this.state.vertical == false)
             return <CafeAttributes_Item 
-                colorClass={AttrObj.color}
+                colorClass={`cafe_icon_black ${AttrObj.opacity}`}
                 svgData={AttrObj.svg}
                 size="20"
             />
         return (
             <div class='cafeAttributes_vertical_row'>
                 <CafeAttributes_Item 
-                    colorClass={AttrObj.color}
+                    colorClass={`${AttrObj.color} ${AttrObj.opacity}`}
                     svgData={AttrObj.svg}
                     size="20"
                 />
@@ -54,7 +54,6 @@ class CafeAttributes extends Component {
                 <div class='cafeAttributes_container'>
                     {this.getAttributeItem('outlets')}
                     {this.getAttributeItem('wifi')}
-                    {this.getAttributeItem('coffee')}
                     {this.getAttributeItem('food')}
                 </div>
             )

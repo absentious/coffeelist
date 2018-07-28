@@ -1,0 +1,59 @@
+.modalSplit {
+    display: flex;
+    flex-direction: row;
+}
+
+.modalButton {
+    width: 240px;
+    height: 46px;
+    position: relative;
+}
+
+.modalButton_bg {
+    position: absolute;
+    width: 100%;
+    height: 46px;
+    opacity: .26;
+    background-color: $color-theme-0;
+    border-radius: 23px;
+}
+
+.modalButton_bg_selected {
+    position: absolute;
+    width: 100%;
+    height: 46px;
+    opacity: .26;
+    background-color: $color-theme-1;
+    border-radius: 23px;
+}
+
+.modalButton:hover .modalButtonText {
+    text-decoration: underline;
+}
+
+.modalButtonElements {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    margin: $pad-thin;
+    padding-left: $pad-offset;
+}
+
+.modalButtonText_container {
+    
+}
+
+.modalButtonText {
+    font-family: $font-family-1;
+    font-size: $txt-size-sm;
+    color: $color-theme-1;
+    padding-left: $pad-thin;
+    padding-right: $pad-thin;
+    line-height: $txt-size-lg;
+    letter-spacing: .1rem;
+}
+
+.modalButtonPanel {
+    display: flex;
+    flex-direction: column;
+}

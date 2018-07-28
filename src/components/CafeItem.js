@@ -6,7 +6,6 @@ import * as actions from '../redux/actions';
 import CafeNeighborhood from './CafeNeighborhood';
 import CafeAttributes from './CafeAttributes';
 import CafeName from './CafeName';
-import iconData from '../data/generalIcons.json';
 
 class CafeItem extends Component {
     constructor () {

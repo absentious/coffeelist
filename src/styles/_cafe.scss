@@ -115,12 +115,20 @@
     margin-right: $pad-thin;
 }
 
+.cafe_inactive {
+    opacity: 0.3;
+}
+
+.cafe_active {
+    opacity: 1;
+}
+
 .cafe_icon_red {
-    fill: $color-theme-3;
+    fill: $color-theme-2;
 }
 
 .cafe_icon_black {
-    fill: $color-theme-2;
+    fill: $color-theme-1;
 }
 
 .cafe_icon_green {
