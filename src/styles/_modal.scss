@@ -98,4 +98,29 @@
     height: $pad-wide;
     border-radius: $pad-normal;
     background-color: $color-theme-4;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.openModalButton {
+    width: 8rem;
+    height: 2rem;
+    background-color: $color-theme-4;
+    border-radius: 1rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.openModalButton_text {
+    font-family: $font-family-0;
+    font-size: $txt-size-lg;
+    color: $color-theme-0;
+    padding-left: $pad-thin;
+    padding-right: $pad-thin;
+    line-height: 2rem;
+    letter-spacing: .1rem;
 }
