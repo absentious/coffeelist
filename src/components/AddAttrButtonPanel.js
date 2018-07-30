@@ -6,7 +6,7 @@ import * as actions from '../redux/actions';
 import AddAttrButton from './AddAttrButton';
 
 
-class CafeList extends Component {
+class AddAttrButtonPanel extends Component {
     constructor () {
         super();
         this.state = {
@@ -25,7 +25,7 @@ class CafeList extends Component {
     render () {
         return (
             <div class='modalButtonPanel'>
-                {this.props.values.map(val => <AddAttrButton attribute={this.state.attribute} level={val} />)}
+                {this.props.values.map(val => <AddAttrButton attribute={this.state.attribute} level={val} key={val}/>)}
             </div>
         )
     }
@@ -40,4 +40,4 @@ const mapStateToProps = state => {
     return { cafes };
 };
 
-export default connect(mapStateToProps, actions)(CafeList);
+export default connect(mapStateToProps, actions)(AddAttrButtonPanel);

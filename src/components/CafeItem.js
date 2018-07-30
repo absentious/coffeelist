@@ -28,9 +28,7 @@ class CafeItem extends Component {
     }
 
     displayHorizontalAttributes() {
-        console.log("displayAttr1");
         if (this.props.selected == false) {
-            console.log(this.state.cafe.attributes.outlets);
             return <CafeAttributes 
                 outlets={this.state.cafe.attributes.outlets}
                 coffee={this.state.cafe.attributes.coffee}
@@ -71,15 +69,14 @@ class CafeItem extends Component {
 
     selectionProcess() {
         if (this.props.selected) {
-            this.props.clearCafe()
+            this.props.clearCafe();
         }
         else {
-            this.props.selectCafe(this.state.cafe.name)
+            this.props.selectCafe(this.state.cafe.name+" "+this.state.cafe.address.street);
         }
     }
 
     render () {
-        console.log("rendering");
         return (
             <div class='cafeRow_container'>
                 <div class='cafeRow' onClick={this.selectionProcess.bind(this)}>
@@ -105,7 +102,8 @@ class CafeItem extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    const selected = ownProps.cafe.name === state.selectedName;
+    const selectIdentifier = ownProps.cafe.name + " " + ownProps.cafe.address.street;
+    const selected = selectIdentifier === state.selectedName;
     const sortFlag = state.sortFlag;
     return { selected, sortFlag };
 };

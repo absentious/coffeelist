@@ -1,8 +1,5 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
 import '../App.css';
-import listData from '../data/sfData.json'
-import CafeItem from './CafeItem';
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
 import AddAttrButtonPanel from './AddAttrButtonPanel';
@@ -20,6 +17,34 @@ class AddCafeModal extends Component {
 
     componentWillMount() {
         this.props.mapClear();
+    }
+
+    submitNewCafe() {
+        var { map_name, map_street, map_citystate, map_zip, map_neighborhood, map_lat, map_lng } = this.props.addCafeData;
+        console.log(this.props);
+        var cafeStructured = {
+            name: map_name,
+            address: {
+                street: map_street,
+                street2: "",
+                citystate: map_citystate,
+                zip: map_zip
+            },
+            neighborhood: map_neighborhood,
+            attributes: {
+                outlets: this.props.modalAttr.outlets,
+                wifi: this.props.modalAttr.wifi,
+                coffee: this.props.modalAttr.coffee,
+                food: this.props.modalAttr.food,
+                loft: this.props.modalAttr.loft,
+                vibe: this.props.modalAttr.vibe,
+                drinks: this.props.modalAttr.drinks
+            },
+            lat: map_lat,
+            lng: map_lng
+        }
+
+        this.props.addCafe(cafeStructured);
     }
 
     render () {
@@ -59,7 +84,7 @@ class AddCafeModal extends Component {
                         <AddAttrButtonPanel attribute='drinks' values={[1]} />
                         <AddAttrButtonPanel attribute='loft' values={[1]} />
                     </div>
-                    <div class='modalSubmit'>
+                    <div class='modalSubmit' onClick={this.submitNewCafe.bind(this)}>
                     </div>
                 </div>
             </div>
@@ -70,9 +95,10 @@ class AddCafeModal extends Component {
 const mapStateToProps = state => {
     console.log(state);
 
-    const addCafeData = state.modalAttr.addCafeData
+    const addCafeData = state.modalAttr.addCafeData;
+    const modalAttr = state.modalAttr;
 
-    return { addCafeData };
+    return { addCafeData, modalAttr };
 };
 
 export default connect(mapStateToProps, actions)(AddCafeModal);

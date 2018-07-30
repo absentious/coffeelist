@@ -8,12 +8,19 @@ export default (state = null, action) => {
             return action.payload;
         case 'cafe_sort':
             const sortByKey = key => (a, b) => a[key] > b[key];
-            const sorted = _.clone(state.sort(sortByKey(action.payload)), true);
-            console.log(`state=${JSON.stringify(state)}\nsorted=${JSON.stringify(sorted)}`);
+            const stateArr = _.map(state, (val, uid) => {
+                return { ...val };
+            });
+            const sorted = _.clone(stateArr.sort(sortByKey(action.payload)), true);
+            console.log(state);
+            console.log(sorted);
             return sorted;
         case 'cafe_sort_inner':
             const sortByInnerKey = key => (a, b) => a["attributes"][key] < b["attributes"][key];
-            const sortedI = _.clone(state.sort(sortByInnerKey(action.payload)), true);
+            const stateArrI = _.map(state, (val, uid) => {
+                return { ...val };
+            });
+            const sortedI = _.clone(stateArrI.sort(sortByInnerKey(action.payload)), true);
             console.log(`state=${JSON.stringify(state)}\nsorted=${JSON.stringify(sortedI)}`);
             return sortedI;
         default:

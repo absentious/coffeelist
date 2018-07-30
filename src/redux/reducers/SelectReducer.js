@@ -1,6 +1,7 @@
 export default (state = null, action) => {
     switch (action.type) {
         case 'select':
+            console.log(action.payload);
             return action.payload;
         default:
             return state;

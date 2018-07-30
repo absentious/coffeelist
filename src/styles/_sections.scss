@@ -22,12 +22,29 @@
     max-width: 30rem;
 }
 
+.s_user {
+    width: 40rem;
+    max-width: 30rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
 .s_header {
     flex: 1;
     display: flex;
     flex-direction: row;
     margin-bottom: $pad-wide;
     justify-content: space-between;
+}
+
+.s_header_divide {
+    display: flex;
+    flex-direction: row;
+}
+
+.s_header_title {
+    padding-left: $pad-normal;
 }
 
 .s_search {
@@ -38,6 +55,8 @@
 
 .s_list {
     width: 100%;
+    height: 30rem;
+    overflow: auto;
     display: flex;
     flex-direction: column;
 }
