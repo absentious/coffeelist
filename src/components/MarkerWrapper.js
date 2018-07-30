@@ -20,10 +20,10 @@ class MarkerWrapper extends Component {
 
     selectionProcess() {
         if (this.props.selected) {
-            this.props.clearCafe()
+            this.props.clearCafe();
         }
         else {
-            this.props.selectCafe(this.state.cafe.name)
+            this.props.selectCafe(this.state.cafe.name+" "+this.state.cafe.address.street);
         }
     }
 
@@ -33,7 +33,7 @@ class MarkerWrapper extends Component {
                 <Marker 
                     onClick={this.selectionProcess.bind(this)}
                     icon={{ 
-                        url: "http://ayh.io/images/pin_red.png",
+                        url: "http://ayh.io/images/pin_selected.png",
                         scale: 3 
                     }}
                     position={{ lat: this.state.cafe.lat, lng: this.state.cafe.lng }} 
@@ -45,7 +45,7 @@ class MarkerWrapper extends Component {
                 <Marker 
                     onClick={this.selectionProcess.bind(this)}
                     icon={{ 
-                        url: "http://ayh.io/images/pin_grey.png",
+                        url: "http://ayh.io/images/pin_general.png",
                         scale: 2
                     }}
                     position={{ lat: this.state.cafe.lat, lng: this.state.cafe.lng }} 
@@ -64,7 +64,8 @@ class MarkerWrapper extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    const selected = ownProps.cafe.name === state.selectedName;
+    const selectIdentifier = ownProps.cafe.name + " " + ownProps.cafe.address.street;
+    const selected = selectIdentifier === state.selectedName;
     return { selected };
 };
 

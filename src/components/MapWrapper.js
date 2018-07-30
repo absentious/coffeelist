@@ -12,8 +12,8 @@ const MAPAPIKEY = "AIzaSyCOVCDo4noFBDxGblbuw8XUomeXGo3AEXE";
 
 const MapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
-        defaultZoom={11}
-        defaultCenter={{ lat: 37.7749, lng: -122.4194 }}
+        defaultZoom={12}
+        defaultCenter={{ lat: 37.7649, lng: -122.4394 }}
         options={{ styles: [
             {
                 "featureType": "landscape",
@@ -100,7 +100,7 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
         ]}}
     >
 
-        {props.cafes.map(item => <MarkerWrapper cafe={item} key={item.name}/>)}
+        {props.cafes.map(item => <MarkerWrapper cafe={item} key={item.name+" "+item.address.street}/>)}
         
     </GoogleMap>
 ))

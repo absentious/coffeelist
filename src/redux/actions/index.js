@@ -71,3 +71,16 @@ export const mapClear = () => {
         payload: ""
     }
 }
+
+export const addCafe = (cafeStructured) => {
+
+    return (dispatch) => {
+        console.log(cafeStructured);
+        dispatch({ type: 'add_cafe' });
+        firebase.database().ref(`cafes`)
+        .push(cafeStructured)
+        .then(() => {
+            dispatch({ type: 'add_cafe_done' });
+        });
+    };
+};

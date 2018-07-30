@@ -1,10 +1,12 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
+import Modal from 'react-responsive-modal';
 import '../App.css';
 import listData from '../data/sfData.json'
 import CafeItem from './CafeItem';
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
+import AddCafeModal from './components/AddCafeModal';
 
 
 class CafeList extends Component {
@@ -16,14 +18,21 @@ class CafeList extends Component {
     }
 
     componentWillMount() {
-        this.props.cafeFetch();
     }
+
+    onOpenModal = () => {
+        this.setState({ open: true });
+    };
+    
+    onCloseModal = () => {
+        this.setState({ open: false });
+    };
 
     render () {
         return (
-            <div class='s_list'>
-                {this.props.cafes.map(item => <CafeItem cafe={item} key={item.name+" "+item.address.street}/>)}
-            </div>
+            <Modal open={this.state.open} onClose={this.onCloseModal} center>
+                <AddCafeModal />
+            </Modal>
         )
     }
 }

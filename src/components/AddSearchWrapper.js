@@ -7,10 +7,11 @@ import * as actions from '../redux/actions';
 import { SearchBox } from "react-google-maps/lib/components/places/SearchBox";
 const { compose, withProps, lifecycle } = require("recompose");
 
+const MAPAPIKEY = "AIzaSyCOVCDo4noFBDxGblbuw8XUomeXGo3AEXE";
 
 const AddSearchWrapper = compose(
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${MAPAPIKEY}&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: <div style={{  height: `100%`, marginRight: `0` }} />,
     containerElement: <div style={{ width: `60%`, height: `10rem` }} />,
     mapElement: <div style={{ height: `100%` }} />,
@@ -44,6 +45,8 @@ const AddSearchWrapper = compose(
           var map_neighborhood = places[0].address_components[2].short_name;
           var map_street = places[0].address_components[0].short_name+" "+places[0].address_components[1].short_name;
           var map_addr = places[0].address_components[3].long_name+", "+places[0].address_components[5].short_name+" "+places[0].address_components[7].short_name;
+          var map_citystate = places[0].address_components[3].long_name+", "+places[0].address_components[5].short_name;
+          var map_zip = places[0].address_components[7].short_name;
           var map_name = places[0].name;
           var map_lat = (places[0].geometry.viewport.f.b+places[0].geometry.viewport.f.f)/2;
           var map_lng = (places[0].geometry.viewport.b.b+places[0].geometry.viewport.b.f)/2;
@@ -51,6 +54,8 @@ const AddSearchWrapper = compose(
             "map_neighborhood": map_neighborhood,
             "map_street": map_street,
             "map_addr": map_addr,
+            "map_citystate": map_citystate,
+            "map_zip": map_zip,
             "map_name": map_name,
             "map_lat": map_lat,
             "map_lng": map_lng

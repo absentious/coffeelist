@@ -41,7 +41,7 @@
 .cafeNeighborhood_bg {
     display:inline-block;
     height: $txt-size-lg;
-    background-color: $color-theme-1;
+    background-color: $color-theme-1-a;
     border-radius: $txt-size-lg-rad;
     margin-top: $pad-offset;
 }
@@ -49,7 +49,7 @@
 .cafeNeighborhood_text {
     font-family: $font-family-0;
     font-size: $txt-size-sm;
-    color: $color-theme-0;
+    color: $color-theme-4;
     padding-left: $pad-thin;
     padding-right: $pad-thin;
     line-height: $txt-size-lg;
@@ -112,7 +112,7 @@
 }
 
 .cafeAttributes_item {
-    margin-right: $pad-thin;
+    margin-right: $pad-normal;
 }
 
 .cafe_inactive {

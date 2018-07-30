@@ -14,6 +14,8 @@ import SortBar from './components/SortBar';
 import MapWrapper from './components/MapWrapper';
 import AddCafeModal from './components/AddCafeModal';
 
+import iconData from './data/attributeIcons.json';
+
 const MAPAPIKEY = "AIzaSyCOVCDo4noFBDxGblbuw8XUomeXGo3AEXE";
 
 class App extends Component {
@@ -55,15 +57,28 @@ class App extends Component {
                             <div class='s_splitscreen'>
                                 <div class='s_main'>
                                     <div class='s_header'>
-                                        <div><p class='t_header'>☕ coffeelist_sf</p></div>
-                                        <div><button onClick={this.onOpenModal}>Add Cafe</button></div>
+                                        <div class='s_header_divide'>
+                                            <div><svg class='cafe_icon_black' xmlns="http://www.w3.org/2000/svg" width='48' height='48' viewBox="0 0 24 24">
+                                                <path d={iconData.coffee[0].svg} />
+                                            </svg></div>
+                                            <div class='s_header_title'><p class='t_header'> the sf caffeinatory</p></div>
+                                        </div>
+                                        
                                     </div>
                                     <div>
-                                        <Modal open={this.state.open} onClose={this.onCloseModal} center>
+                                        <Modal 
+                                            open={this.state.open} 
+                                            onClose={this.onCloseModal} 
+                                            center
+                                            classNames={{ overlay: 'modal_custom_overlay', modal: 'modal_custom' }}
+                                        >
                                             <AddCafeModal />
                                         </Modal>
                                     </div>
                                     <SortBar />
+                                </div>
+                                <div class='s_user'>
+                                    <div><button onClick={this.onOpenModal}>Add Cafe</button></div>
                                 </div>
                             </div>
                             <div class='s_splitscreen'>
