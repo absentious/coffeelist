@@ -78,7 +78,9 @@ class App extends Component {
                                     <SortBar />
                                 </div>
                                 <div class='s_user'>
-                                    <div><button onClick={this.onOpenModal}>Add Cafe</button></div>
+                                    <div class='openModalButton' onClick={this.onOpenModal}>
+                                        <p class='openModalButton_text' >add cafe</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class='s_splitscreen'>

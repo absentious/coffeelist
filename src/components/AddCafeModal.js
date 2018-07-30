@@ -50,7 +50,7 @@ class AddCafeModal extends Component {
     render () {
         return (
             <div class='s_modal'>
-                <p class='t_header'>Add New Cafe</p>
+                <p class='t_header'>add new cafe</p>
                 <div class='modalMainSplit'>
                     <AddSearchWrapper />
                     <div class='modalCurrent'>
@@ -85,6 +85,7 @@ class AddCafeModal extends Component {
                         <AddAttrButtonPanel attribute='loft' values={[1]} />
                     </div>
                     <div class='modalSubmit' onClick={this.submitNewCafe.bind(this)}>
+                        <p class='openModalButton_text' >submit cafe</p>
                     </div>
                 </div>
             </div>

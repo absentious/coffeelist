@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Overpass+Mono:400,600,700|Rubik:400,500");
 .s_allContent {
-  margin-left: 120px;
+  width: 70rem;
+  margin-left: auto;
   margin-right: auto;
 }
 
@@ -340,6 +341,31 @@
   height: 48px;
   border-radius: 24px;
   background-color: #0c93b8;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.openModalButton {
+  width: 8rem;
+  height: 2rem;
+  background-color: #0c93b8;
+  border-radius: 1rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.openModalButton_text {
+  font-family: "Rubik", monospace;
+  font-size: 20px;
+  color: #fff;
+  padding-left: 12px;
+  padding-right: 12px;
+  line-height: 2rem;
+  letter-spacing: 0.1rem;
 }
 
 * {
@@ -349,7 +375,7 @@
 }
 
 body, html {
-  color: #f3eded;
+  color: #fff;
   font-family: "Overpass Mono", "Courier New", Courier, monospace;
   font-size: 18px;
   position: relative;
