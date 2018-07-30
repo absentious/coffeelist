@@ -79,13 +79,6 @@ class SortBar extends Component {
                                 size="20"
                             />
                         </div>
-                        <div class='sortArrow' onClick={this.sortCoffee.bind(this)}>
-                            <CafeAttributes_Item 
-                                colorClass="cafe_icon_black"
-                                svgData={iconData.downArrow.svg}
-                                size="20"
-                            />
-                        </div>
                         <div class='sortArrow' onClick={this.sortFood.bind(this)}>
                             <CafeAttributes_Item 
                                 colorClass="cafe_icon_black"

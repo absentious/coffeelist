@@ -25,7 +25,13 @@ class CafeList extends Component {
     }
 
     selectOption() {
-        this.props.selectModalAttr(this.state.attribute, this.state.level);
+        if (this.props.selected) {
+            this.props.clearModalAttr(this.state.attribute, this.state.level);
+        }
+        else {
+            this.props.selectModalAttr(this.state.attribute, this.state.level);
+        }
+        
     }
 
     renderBg() {

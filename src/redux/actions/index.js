@@ -44,9 +44,30 @@ export const listsort = (sortKey, nested) => {
     }
 }
 
+export const clearModalAttr = (attr, selection) => {
+    return {
+        type: 'clearModalAttr',
+        payload: { attr: attr, selection: selection }
+    }
+}
+
 export const selectModalAttr = (attr, selection) => {
     return {
         type: 'selectModalAttr',
         payload: { attr: attr, selection: selection }
+    }
+}
+
+export const mapSelect = (cafeData) => {
+    return {
+        type: 'map_select',
+        payload: cafeData
+    }
+}
+
+export const mapClear = () => {
+    return {
+        type: 'map_clear',
+        payload: ""
     }
 }
