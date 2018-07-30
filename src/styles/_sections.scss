@@ -23,9 +23,11 @@
 }
 
 .s_header {
+    flex: 1;
     display: flex;
     flex-direction: row;
     margin-bottom: $pad-wide;
+    justify-content: space-between;
 }
 
 .s_search {
@@ -43,4 +45,5 @@
 .s_modal {
     width: 40rem;
     height: 40rem;
+    margin-top: $pad-thin;
 }

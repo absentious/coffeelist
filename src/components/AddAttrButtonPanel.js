@@ -10,7 +10,8 @@ class CafeList extends Component {
     constructor () {
         super();
         this.state = {
-            attribute: ""
+            attribute: "",
+            values: {}
         }
     }
 
@@ -18,15 +19,13 @@ class CafeList extends Component {
     }
 
     componentWillMount() {
-        this.setState({ attribute: this.props.attribute });
+        this.setState({ attribute: this.props.attribute, values: this.props.values });
     }
 
     render () {
         return (
             <div class='modalButtonPanel'>
-                <AddAttrButton attribute={this.state.attribute} level={0} />
-                <AddAttrButton attribute={this.state.attribute} level={1} />
-                <AddAttrButton attribute={this.state.attribute} level={2} />
+                {this.props.values.map(val => <AddAttrButton attribute={this.state.attribute} level={val} />)}
             </div>
         )
     }

@@ -1,12 +1,36 @@
+.modalMainSplit {
+    display: flex;
+    flex-flow: row;
+    margin-top: $pad-normal;
+    justify-content: space-between;
+}
+
 .modalSplit {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
+    margin-top: $pad-normal;
+    justify-content: space-between;
+}
+
+.modalSplitVertical {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $pad-normal;
+}
+
+.modalCurrent {
+    margin-left: $pad-normal;
+    margin-right: $pad-normal;
 }
 
 .modalButton {
-    width: 240px;
+    width: 220px;
     height: 46px;
     position: relative;
+}
+
+.modalSubtitle {
+    margin-top: $pad-normal;
 }
 
 .modalButton_bg {
@@ -56,4 +80,12 @@
 .modalButtonPanel {
     display: flex;
     flex-direction: column;
+}
+
+.modalSubmit {
+    margin-top: $pad-normal;
+    margin-bottom: $pad-normal;
+    height: $pad-wide;
+    border-radius: $pad-normal;
+    background-color: $color-theme-4;
 }

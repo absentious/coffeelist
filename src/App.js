@@ -55,10 +55,10 @@ class App extends Component {
                             <div class='s_splitscreen'>
                                 <div class='s_main'>
                                     <div class='s_header'>
-                                        <p class='t_header'>☕ coffeelist_sf</p>
+                                        <div><p class='t_header'>☕ coffeelist_sf</p></div>
+                                        <div><button onClick={this.onOpenModal}>Add Cafe</button></div>
                                     </div>
                                     <div>
-                                        <button onClick={this.onOpenModal}>Open modal</button>
                                         <Modal open={this.state.open} onClose={this.onCloseModal} center>
                                             <AddCafeModal />
                                         </Modal>
@@ -75,6 +75,7 @@ class App extends Component {
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </Provider>

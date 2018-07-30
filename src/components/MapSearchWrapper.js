@@ -1,3 +1,5 @@
+/* global google */
+
 import _ from 'lodash';
 import React, { Component } from 'react';
 import '../App.css';
@@ -100,18 +102,106 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
         ]}}
     >
 
-        {props.cafes.map(item => <MarkerWrapper cafe={item} key={item.name}/>)}
+        <SearchBox
+            ref={ref => {
+                refs.searchBox = ref}}
+            bounds={null}
+            controlPosition={google.maps.ControlPosition.TOP_LEFT}
+            onPlacesChanged={() => {
+                const places = refs.searchBox.getPlaces();
+                const bounds = new google.maps.LatLngBounds();
+      
+                places.forEach(place => {
+                  if (place.geometry.viewport) {
+                    bounds.union(place.geometry.viewport)
+                  } else {
+                    bounds.extend(place.geometry.location)
+                  }
+                });
+                const nextMarkers = places.map(place => ({
+                  position: place.geometry.location,
+                }));
+                const nextCenter = _.get(nextMarkers, '0.position', this.state.center);
+      
+                this.setState({
+                  center: nextCenter,
+                  markers: nextMarkers,
+                });
+                // refs.map.fitBounds(bounds);
+              }}
+        >
+            <input
+                type="text"
+                placeholder="Customized your placeholder"
+                style={{
+                boxSizing: `border-box`,
+                border: `1px solid transparent`,
+                width: `240px`,
+                height: `32px`,
+                marginTop: `27px`,
+                padding: `0 12px`,
+                borderRadius: `3px`,
+                boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
+                fontSize: `14px`,
+                outline: `none`,
+                textOverflow: `ellipses`,
+                }}
+            />
+        </SearchBox>
         
     </GoogleMap>
 ))
 
-class MapWrapper extends Component {
+class MapSearchWrapper extends Component {
     constructor () {
         super()
     }
 
     componentWillMount() {
-    }
+        const refs = {}
+  
+        this.setState({
+          bounds: null,
+          center: {
+            lat: 41.9, lng: -87.624
+          },
+          markers: [],
+          onMapMounted: ref => {
+            refs.map = ref;
+          },
+          onBoundsChanged: () => {
+            this.setState({
+              bounds: refs.map.getBounds(),
+              center: refs.map.getCenter(),
+            })
+          },
+          onSearchBoxMounted: ref => {
+            refs.searchBox = ref;
+          },
+          onPlacesChanged: () => {
+            const places = refs.searchBox.getPlaces();
+            const bounds = new google.maps.LatLngBounds();
+  
+            places.forEach(place => {
+              if (place.geometry.viewport) {
+                bounds.union(place.geometry.viewport)
+              } else {
+                bounds.extend(place.geometry.location)
+              }
+            });
+            const nextMarkers = places.map(place => ({
+              position: place.geometry.location,
+            }));
+            const nextCenter = _.get(nextMarkers, '0.position', this.state.center);
+  
+            this.setState({
+              center: nextCenter,
+              markers: nextMarkers,
+            });
+            // refs.map.fitBounds(bounds);
+          },
+        })
+      }
 
     render () {
         return (
@@ -136,4 +226,4 @@ const mapStateToProps = state => {
     return { cafes };
 };
 
-export default connect(mapStateToProps, actions)(MapWrapper);
+export default connect(mapStateToProps, actions)(MapSearchWrapper);
