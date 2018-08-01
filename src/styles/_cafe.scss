@@ -22,10 +22,11 @@
     text-decoration: underline;
 }
 
-.cafeNeighborhood-container {
+.cafeNeighborhood_container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    max-width: 9rem;
 }
 
 .cafeNeighborhood {
@@ -124,14 +125,19 @@
 
 .cafe_icon_red {
     fill: $color-theme-2;
+    color: $color-theme-2;
+    
 }
 
 .cafe_icon_black {
     fill: $color-theme-1;
+    color: $color-theme-1;
 }
 
 .cafe_icon_green {
     fill: $color-theme-4;
+    color: $color-theme-4;
+    font-weight: 600;
 }
 
 .cafe_expandedPadding {

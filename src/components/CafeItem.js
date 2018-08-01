@@ -28,12 +28,17 @@ class CafeItem extends Component {
     }
 
     displayHorizontalAttributes() {
-        if (this.props.selected == false) {
+        console.log(this.state.name);
+        //if this.props.selected == false
+        if (true) {
             return <CafeAttributes 
                 outlets={this.state.cafe.attributes.outlets}
                 coffee={this.state.cafe.attributes.coffee}
                 wifi={this.state.cafe.attributes.wifi}
                 food={this.state.cafe.attributes.food}
+                drinks={this.state.cafe.attributes.drinks}
+                vibe={this.state.cafe.attributes.vibe}
+                loft={this.state.cafe.attributes.lofr}
                 vertical={false}
             />;
         }
@@ -41,12 +46,16 @@ class CafeItem extends Component {
     }
 
     displayVerticalAttributes() {
+
         if (this.props.selected) {
             return <CafeAttributes 
                 outlets={this.state.cafe.attributes.outlets}
                 coffee={this.state.cafe.attributes.coffee}
                 wifi={this.state.cafe.attributes.wifi}
                 food={this.state.cafe.attributes.food}
+                drinks={this.state.cafe.attributes.drinks}
+                vibe={this.state.cafe.attributes.vibe}
+                loft={this.state.cafe.attributes.loft}
                 vertical={true}
             />;
         }

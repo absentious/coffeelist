@@ -108,10 +108,11 @@
   text-decoration: underline;
 }
 
-.cafeNeighborhood-container {
+.cafeNeighborhood_container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  max-width: 9rem;
 }
 
 .cafeNeighborhood {
@@ -208,14 +209,18 @@
 
 .cafe_icon_red {
   fill: #444444;
+  color: #444444;
 }
 
 .cafe_icon_black {
   fill: #252222;
+  color: #252222;
 }
 
 .cafe_icon_green {
   fill: #ee363c;
+  color: #ee363c;
+  font-weight: 600;
 }
 
 .cafe_expandedPadding {
