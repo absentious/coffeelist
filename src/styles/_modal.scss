@@ -1,10 +1,12 @@
 .modal_custom_overlay {
-    background: rgba(255,255,255, 0.7);
+    background: rgba(0,0,0, 0.7);
 }
 
 .modal_custom {
-    background: #ffffff;
+    background: $color-theme-0;
     border-radius: $pad-normal;
+    border: 8px solid $color-theme-1;
+    height: 45rem;
 }
 
 
@@ -48,7 +50,7 @@
     width: 100%;
     height: 46px;
     opacity: .26;
-    background-color: #fff;
+    background-color: $color-theme-0;
     border-radius: 23px;
 }
 
@@ -56,7 +58,7 @@
     position: absolute;
     width: 100%;
     height: 46px;
-    opacity: .26;
+    opacity: .1;
     background-color: $color-theme-1;
     border-radius: 23px;
 }

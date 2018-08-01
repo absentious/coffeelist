@@ -87,9 +87,11 @@ class CafeItem extends Component {
                         {this.displayAddress()}
                     </div>
                     <CafeName name={this.state.name}>
+                        
                         {this.displayVerticalAttributes()}
                     </CafeName>
                     {this.displayHorizontalAttributes()}
+                    
                     <div class='cafeArrow_container'>
                         <div class='cafeArrow'>
 

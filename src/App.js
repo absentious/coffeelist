@@ -9,14 +9,12 @@ import ReduxThunk from 'redux-thunk';
 import logo from './logo.svg';
 import './App.css';
 import CafeList from './components/CafeList';
-import Search from './components/Search';
 import SortBar from './components/SortBar';
 import MapWrapper from './components/MapWrapper';
-import AddCafeModal from './components/AddCafeModal';
+import AddCafeButton from './components/AddCafeButton';
+import AddCafeModal_Container from './components/AddCafeModal_Container';
 
 import iconData from './data/attributeIcons.json';
-
-const MAPAPIKEY = "AIzaSyCOVCDo4noFBDxGblbuw8XUomeXGo3AEXE";
 
 class App extends Component {
 
@@ -40,14 +38,6 @@ class App extends Component {
         firebase.initializeApp(config);
     }
 
-    onOpenModal = () => {
-        this.setState({ open: true });
-    };
-    
-    onCloseModal = () => {
-        this.setState({ open: false });
-    };
-
     render() {
         return (
             <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
@@ -66,21 +56,12 @@ class App extends Component {
                                         
                                     </div>
                                     <div>
-                                        <Modal 
-                                            open={this.state.open} 
-                                            onClose={this.onCloseModal} 
-                                            center
-                                            classNames={{ overlay: 'modal_custom_overlay', modal: 'modal_custom' }}
-                                        >
-                                            <AddCafeModal />
-                                        </Modal>
+                                        <AddCafeModal_Container />
                                     </div>
                                     <SortBar />
                                 </div>
                                 <div class='s_user'>
-                                    <div class='openModalButton' onClick={this.onOpenModal}>
-                                        <p class='openModalButton_text' >add cafe</p>
-                                    </div>
+                                    <AddCafeButton />
                                 </div>
                             </div>
                             <div class='s_splitscreen'>

@@ -7,7 +7,7 @@ import * as actions from '../redux/actions';
 import { SearchBox } from "react-google-maps/lib/components/places/SearchBox";
 const { compose, withProps, lifecycle } = require("recompose");
 
-const MAPAPIKEY = "AIzaSyCOVCDo4noFBDxGblbuw8XUomeXGo3AEXE";
+const MAPAPIKEY = "AIzaSyAiA16Q_9vDXOLOxWmtBz7w2Q3ao_DwZxI";
 
 const AddSearchWrapper = compose(
   withProps({
@@ -97,43 +97,37 @@ const AddSearchWrapper = compose(
     onBoundsChanged={props.onBoundsChanged}
     options={{ styles: [
         {
-            "featureType": "landscape",
-            "elementType": "labels",
+            "featureType": "all",
+            "elementType": "labels.text.fill",
             "stylers": [
                 {
-                    "visibility": "off"
+                    "saturation": 36
+                },
+                {
+                    "color": "#333333"
+                },
+                {
+                    "lightness": 40
                 }
             ]
         },
         {
-            "featureType": "transit",
-            "elementType": "labels",
+            "featureType": "all",
+            "elementType": "labels.text.stroke",
             "stylers": [
                 {
-                    "visibility": "off"
+                    "visibility": "on"
+                },
+                {
+                    "color": "#ffffff"
+                },
+                {
+                    "lightness": 16
                 }
             ]
         },
         {
-            "featureType": "poi",
-            "elementType": "labels",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "water",
-            "elementType": "labels",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "road",
+            "featureType": "all",
             "elementType": "labels.icon",
             "stylers": [
                 {
@@ -142,39 +136,140 @@ const AddSearchWrapper = compose(
             ]
         },
         {
+            "featureType": "administrative",
+            "elementType": "geometry.fill",
             "stylers": [
                 {
-                    "hue": "#00aaff"
+                    "color": "#fefefe"
                 },
                 {
-                    "saturation": -100
-                },
-                {
-                    "gamma": 2.15
-                },
-                {
-                    "lightness": 12
+                    "lightness": "20"
                 }
             ]
         },
         {
-            "featureType": "road",
-            "elementType": "labels.text.fill",
+            "featureType": "administrative",
+            "elementType": "geometry.stroke",
             "stylers": [
                 {
-                    "visibility": "on"
+                    "color": "#fefefe"
                 },
                 {
-                    "lightness": 24
+                    "lightness": 17
+                },
+                {
+                    "weight": 1.2
                 }
             ]
         },
         {
-            "featureType": "road",
+            "featureType": "landscape",
             "elementType": "geometry",
             "stylers": [
                 {
-                    "lightness": 57
+                    "color": "#f5f5f5"
+                },
+                {
+                    "lightness": "-4"
+                }
+            ]
+        },
+        {
+            "featureType": "poi",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#f5f5f5"
+                },
+                {
+                    "lightness": 21
+                }
+            ]
+        },
+        {
+            "featureType": "poi.park",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#dedede"
+                },
+                {
+                    "lightness": 21
+                }
+            ]
+        },
+        {
+            "featureType": "road.highway",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "color": "#ffffff"
+                },
+                {
+                    "lightness": 17
+                }
+            ]
+        },
+        {
+            "featureType": "road.highway",
+            "elementType": "geometry.stroke",
+            "stylers": [
+                {
+                    "color": "#ffffff"
+                },
+                {
+                    "lightness": 29
+                },
+                {
+                    "weight": 0.2
+                }
+            ]
+        },
+        {
+            "featureType": "road.arterial",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#ffffff"
+                },
+                {
+                    "lightness": 18
+                }
+            ]
+        },
+        {
+            "featureType": "road.local",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#ffffff"
+                },
+                {
+                    "lightness": 16
+                }
+            ]
+        },
+        {
+            "featureType": "transit",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#f2f2f2"
+                },
+                {
+                    "lightness": 19
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#fdfdfd"
+                },
+                {
+                    "lightness": "0"
                 }
             ]
         }

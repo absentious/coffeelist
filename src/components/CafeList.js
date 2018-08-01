@@ -29,7 +29,6 @@ class CafeList extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
     const cafes = _.map(state.cafes, (val, uid) => {
         return { ...val, uid };
     });
