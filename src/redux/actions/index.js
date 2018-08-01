@@ -84,3 +84,18 @@ export const addCafe = (cafeStructured) => {
         });
     };
 };
+
+
+export const openModal = () => {
+    return {
+        type: 'modal_open',
+        payload: ""
+    }
+}
+
+export const closeModal = () => {
+    return {
+        type: 'modal_close',
+        payload: ""
+    }
+}

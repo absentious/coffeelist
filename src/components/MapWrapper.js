@@ -16,43 +16,37 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
         defaultCenter={{ lat: 37.7649, lng: -122.4394 }}
         options={{ styles: [
             {
-                "featureType": "landscape",
-                "elementType": "labels",
+                "featureType": "all",
+                "elementType": "labels.text.fill",
                 "stylers": [
                     {
-                        "visibility": "off"
+                        "saturation": 36
+                    },
+                    {
+                        "color": "#333333"
+                    },
+                    {
+                        "lightness": 40
                     }
                 ]
             },
             {
-                "featureType": "transit",
-                "elementType": "labels",
+                "featureType": "all",
+                "elementType": "labels.text.stroke",
                 "stylers": [
                     {
-                        "visibility": "off"
+                        "visibility": "on"
+                    },
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "lightness": 16
                     }
                 ]
             },
             {
-                "featureType": "poi",
-                "elementType": "labels",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
-            },
-            {
-                "featureType": "water",
-                "elementType": "labels",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
-            },
-            {
-                "featureType": "road",
+                "featureType": "all",
                 "elementType": "labels.icon",
                 "stylers": [
                     {
@@ -61,39 +55,140 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
                 ]
             },
             {
+                "featureType": "administrative",
+                "elementType": "geometry.fill",
                 "stylers": [
                     {
-                        "hue": "#00aaff"
+                        "color": "#fefefe"
                     },
                     {
-                        "saturation": -100
-                    },
-                    {
-                        "gamma": 2.15
-                    },
-                    {
-                        "lightness": 12
+                        "lightness": "20"
                     }
                 ]
             },
             {
-                "featureType": "road",
-                "elementType": "labels.text.fill",
+                "featureType": "administrative",
+                "elementType": "geometry.stroke",
                 "stylers": [
                     {
-                        "visibility": "on"
+                        "color": "#fefefe"
                     },
                     {
-                        "lightness": 24
+                        "lightness": 17
+                    },
+                    {
+                        "weight": 1.2
                     }
                 ]
             },
             {
-                "featureType": "road",
+                "featureType": "landscape",
                 "elementType": "geometry",
                 "stylers": [
                     {
-                        "lightness": 57
+                        "color": "#f5f5f5"
+                    },
+                    {
+                        "lightness": "-4"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#f5f5f5"
+                    },
+                    {
+                        "lightness": 21
+                    }
+                ]
+            },
+            {
+                "featureType": "poi.park",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#dedede"
+                    },
+                    {
+                        "lightness": 21
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "lightness": 17
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "lightness": 29
+                    },
+                    {
+                        "weight": 0.2
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "lightness": 18
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "lightness": 16
+                    }
+                ]
+            },
+            {
+                "featureType": "transit",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#f2f2f2"
+                    },
+                    {
+                        "lightness": 19
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#fdfdfd"
+                    },
+                    {
+                        "lightness": "0"
                     }
                 ]
             }
@@ -119,7 +214,7 @@ class MapWrapper extends Component {
                 isMarkerShown
                 googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&key=${MAPAPIKEY}&libraries=geometry,drawing,places`}
                 loadingElement={<div style={{ height: `100%` }} />}
-                containerElement={<div style={{ height: `30rem` }} />}
+                containerElement={<div style={{ height: `32rem` }} />}
                 mapElement={<div style={{ height: `100%` }} />}
                 cafes={this.props.cafes}
             />
@@ -128,7 +223,6 @@ class MapWrapper extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
     const cafes = _.map(state.cafes, (val, uid) => {
         return { ...val, uid };
     });

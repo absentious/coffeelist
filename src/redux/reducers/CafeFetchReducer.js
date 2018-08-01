@@ -7,21 +7,48 @@ export default (state = null, action) => {
             //console.log(action);
             return action.payload;
         case 'cafe_sort':
-            const sortByKey = key => (a, b) => a[key] > b[key];
             const stateArr = _.map(state, (val, uid) => {
                 return { ...val };
             });
-            const sorted = _.clone(stateArr.sort(sortByKey(action.payload)), true);
-            console.log(state);
-            console.log(sorted);
+
+            const sorted = _.clone(stateArr.sort(function(a, b) {
+                var x = a[action.payload];
+                var y = b[action.payload];
+        
+                if (typeof x == "string")
+                {
+                    x = (""+x).toLowerCase(); 
+                }
+                if (typeof y == "string")
+                {
+                    y = (""+y).toLowerCase();
+                }
+        
+                return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+            }), true);
+
             return sorted;
         case 'cafe_sort_inner':
-            const sortByInnerKey = key => (a, b) => a["attributes"][key] < b["attributes"][key];
             const stateArrI = _.map(state, (val, uid) => {
                 return { ...val };
             });
-            const sortedI = _.clone(stateArrI.sort(sortByInnerKey(action.payload)), true);
-            console.log(`state=${JSON.stringify(state)}\nsorted=${JSON.stringify(sortedI)}`);
+
+            const sortedI = _.clone(stateArrI.sort(function(a, b) {
+                var x = a["attributes"][action.payload];
+                var y = b["attributes"][action.payload];
+        
+                if (typeof x == "string")
+                {
+                    x = (""+x).toLowerCase(); 
+                }
+                if (typeof y == "string")
+                {
+                    y = (""+y).toLowerCase();
+                }
+        
+                return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+            }), true);
+
             return sortedI;
         default:
             return state;

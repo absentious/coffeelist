@@ -9,7 +9,8 @@ import * as actions from '../redux/actions';
 import AddCafeModal from './AddCafeModal';
 
 
-class AddCafeModal_Container extends Component {
+
+class AddCafeButton extends Component {
     constructor () {
         super();
 
@@ -22,27 +23,17 @@ class AddCafeModal_Container extends Component {
     }
 
     componentWillMount() {
-        this.props.closeModal();
     }
 
     onOpenModal = () => {
         this.props.openModal();
     };
-    
-    onCloseModal = () => {
-        this.props.closeModal();
-    };
 
     render () {
         return (
-            <Modal 
-                open={this.props.modalOpen} 
-                onClose={this.onCloseModal} 
-                center
-                classNames={{ overlay: 'modal_custom_overlay', modal: 'modal_custom' }}
-            >
-                <AddCafeModal />
-            </Modal>
+            <div class='openModalButton' onClick={this.onOpenModal}>
+                <p class='openModalButton_text' >+ add cafe</p>
+            </div>
         )
     }
 }
@@ -53,4 +44,4 @@ const mapStateToProps = state => {
     return { modalOpen };
 };
 
-export default connect(mapStateToProps, actions)(AddCafeModal_Container);
+export default connect(mapStateToProps, actions)(AddCafeButton);

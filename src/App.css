@@ -57,7 +57,7 @@
 
 .s_list {
   width: 100%;
-  height: 30rem;
+  height: 32rem;
   overflow: auto;
   display: flex;
   flex-direction: column;
@@ -71,7 +71,7 @@
 
 .t_header {
   font-size: 36px;
-  color: #df8931;
+  color: #252222;
   font-family: "Rubik";
   font-weight: 500;
   letter-spacing: 3px;
@@ -80,7 +80,7 @@
 .searchBox {
   border-radius: 30px;
   border: 4px;
-  border-color: #df8931;
+  border-color: #252222;
   border-style: solid;
 }
 
@@ -117,7 +117,7 @@
 .cafeNeighborhood {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   width: 9rem;
   max-width: 9rem;
   margin-bottom: 24px;
@@ -135,9 +135,8 @@
 .cafeNeighborhood_text {
   font-family: "Rubik", monospace;
   font-size: 12px;
-  color: #0c93b8;
-  padding-left: 12px;
-  padding-right: 12px;
+  font-weight: 500;
+  color: #ee363c;
   line-height: 20px;
   letter-spacing: 0.1rem;
 }
@@ -149,7 +148,7 @@
 .cafeName_text {
   font-family: "Overpass Mono", monospace;
   font-size: 20px;
-  color: #df8931;
+  color: #252222;
 }
 
 .cafeAddress {
@@ -160,8 +159,7 @@
   padding-top: 6px;
   font-family: "Rubik", monospace;
   font-size: 12px;
-  color: #df8931;
-  text-align: right;
+  color: #252222;
   letter-spacing: 0.1rem;
 }
 
@@ -178,13 +176,12 @@
   flex-direction: column;
   margin-top: 24px;
   margin-bottom: 12px;
-  padding-left: 24px;
 }
 
 .cafeAttributes_vertical_text {
   font-family: "Overpass Mono", monospace;
   font-size: 12px;
-  color: #df8931;
+  color: #252222;
   padding-left: 12px;
   padding-right: 12px;
   line-height: 20px;
@@ -202,7 +199,7 @@
 }
 
 .cafe_inactive {
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .cafe_active {
@@ -214,11 +211,11 @@
 }
 
 .cafe_icon_black {
-  fill: #df8931;
+  fill: #252222;
 }
 
 .cafe_icon_green {
-  fill: #0c93b8;
+  fill: #ee363c;
 }
 
 .cafe_expandedPadding {
@@ -247,12 +244,14 @@
 }
 
 .modal_custom_overlay {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .modal_custom {
-  background: #ffffff;
+  background: #fdfdfd;
   border-radius: 24px;
+  border: 8px solid #252222;
+  height: 45rem;
 }
 
 .modalMainSplit {
@@ -295,7 +294,7 @@
   width: 100%;
   height: 46px;
   opacity: 0.26;
-  background-color: #fff;
+  background-color: #fdfdfd;
   border-radius: 23px;
 }
 
@@ -303,8 +302,8 @@
   position: absolute;
   width: 100%;
   height: 46px;
-  opacity: 0.26;
-  background-color: #df8931;
+  opacity: 0.1;
+  background-color: #252222;
   border-radius: 23px;
 }
 
@@ -323,7 +322,7 @@
 .modalButtonText {
   font-family: "Overpass Mono", monospace;
   font-size: 12px;
-  color: #df8931;
+  color: #252222;
   padding-left: 12px;
   padding-right: 12px;
   line-height: 20px;
@@ -340,7 +339,7 @@
   margin-bottom: 24px;
   height: 48px;
   border-radius: 24px;
-  background-color: #0c93b8;
+  background-color: #ee363c;
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -351,7 +350,7 @@
 .openModalButton {
   width: 8rem;
   height: 2rem;
-  background-color: #0c93b8;
+  background-color: #ee363c;
   border-radius: 1rem;
   display: flex;
   align-content: center;
@@ -361,7 +360,7 @@
 .openModalButton_text {
   font-family: "Rubik", monospace;
   font-size: 20px;
-  color: #fff;
+  color: #fdfdfd;
   padding-left: 12px;
   padding-right: 12px;
   line-height: 2rem;
@@ -375,7 +374,8 @@
 }
 
 body, html {
-  color: #fff;
+  color: #fdfdfd;
+  background-color: #fdfdfd;
   font-family: "Overpass Mono", "Courier New", Courier, monospace;
   font-size: 18px;
   position: relative;

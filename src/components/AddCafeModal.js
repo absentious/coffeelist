@@ -45,6 +45,7 @@ class AddCafeModal extends Component {
         }
 
         this.props.addCafe(cafeStructured);
+        this.props.closeModal();
     }
 
     render () {
