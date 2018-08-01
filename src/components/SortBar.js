@@ -42,12 +42,25 @@ class SortBar extends Component {
         this.props.listsort("name", false);
     }
 
+    sortDist() {
+        this.props.distsort(this.props.lat, this.props.lng);
+    }
+
     render () {
         return (
             <div class='cafeRow_container'>
                 <div class='cafeRow'>
                     <div class='cafeNeighborhood_container'>
                         <div class='cafeNeighborhood nopad sortArrow' onClick={this.sortNeighborhood.bind(this)}>
+                            <Icon 
+                                colorClass="cafe_icon_black"
+                                svgData={iconData.downArrow.svg}
+                                size="20"
+                            />
+                        </div>
+                    </div>
+                    <div class='cafeDistance' onClick={this.sortDist.bind(this)}>
+                        <div class='sortName sortArrow'>
                             <Icon 
                                 colorClass="cafe_icon_black"
                                 svgData={iconData.downArrow.svg}
@@ -97,7 +110,10 @@ class SortBar extends Component {
 }
 
 const mapStateToProps = state => {
-    return {};
+    const lat = state.location.lat;
+    const lng = state.location.lng;
+
+    return { lat, lng };
 };
 
 export default connect(mapStateToProps, actions)(SortBar);

@@ -56,8 +56,24 @@
     letter-spacing: .1rem;
 }
 
+.cafeDistance {
+    margin-right: $pad-normal;
+    width: 3rem;
+}
+
+.cafeDistance_text {
+    margin-top: $pad-offset;
+    font-family: $font-family-0;
+    font-size: $txt-size-sm;
+    font-weight: 500;
+    color: $color-theme-4;
+    line-height: $txt-size-lg;
+    letter-spacing: .1rem;
+}
+
 .cafeName_container {
-    width: 45%;
+    width: 20rem;
+    min-width: 20rem;
 }
 
 .cafeName_text {

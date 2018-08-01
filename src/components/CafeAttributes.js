@@ -30,8 +30,6 @@ class CafeAttributes extends Component {
             drinks: this.props.drinks,
             vertical: this.props.vertical
         });
-
-        console.log(this.state);
     }
 
     getSubAttribute(AttrObj) {
@@ -51,7 +49,6 @@ class CafeAttributes extends Component {
 
     getAttributeItem(attr) {
         var AttrObj = iconData[attr][this.state[attr]];
-        console.log(AttrObj);
         if (this.state.vertical == false)
             return <CafeAttributes_Item 
                 colorClass={`cafe_icon_black ${AttrObj.opacity}`}
