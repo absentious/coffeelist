@@ -8,10 +8,13 @@ class CafeAttributes extends Component {
         super()
 
         this.state = {
-            outlets: "",
-            food: "",
-            coffee: "",
-            wifi: "",
+            outlets: 0,
+            food: 0,
+            coffee: 0,
+            wifi: 0,
+            vibe: 0,
+            loft: 0,
+            drinks: 0,
             vertical: false
         }
     }
@@ -22,28 +25,43 @@ class CafeAttributes extends Component {
             food: this.props.food, 
             coffee: this.props.coffee, 
             wifi: this.props.wifi,
+            loft: this.props.loft,
+            vibe: this.props.vibe,
+            drinks: this.props.drinks,
             vertical: this.props.vertical
         });
+
+        console.log(this.state);
+    }
+
+    getSubAttribute(AttrObj) {
+        if (AttrObj.display) {
+            return (
+                <div class='cafeAttributes_vertical_row'>
+                    <CafeAttributes_Item 
+                        colorClass={`cafe_icon_black ${AttrObj.opacity}`}
+                        svgData={AttrObj.svg}
+                        size="20"
+                    />
+                    <p class={`cafeAttributes_vertical_text ${AttrObj.color}`}>{AttrObj.label}</p>
+                </div>
+            )
+        }
     }
 
     getAttributeItem(attr) {
         var AttrObj = iconData[attr][this.state[attr]];
+        console.log(AttrObj);
         if (this.state.vertical == false)
             return <CafeAttributes_Item 
                 colorClass={`cafe_icon_black ${AttrObj.opacity}`}
                 svgData={AttrObj.svg}
                 size="20"
             />
-        return (
-            <div class='cafeAttributes_vertical_row'>
-                <CafeAttributes_Item 
-                    colorClass={`${AttrObj.color} ${AttrObj.opacity}`}
-                    svgData={AttrObj.svg}
-                    size="20"
-                />
-                <p class='cafeAttributes_vertical_text'>{AttrObj.label}</p>
-            </div>
-        );
+        else 
+            return (
+                this.getSubAttribute(AttrObj)
+            )
     }
 
 
@@ -61,8 +79,11 @@ class CafeAttributes extends Component {
             <div class='cafeAttributes_vertical'>
                 {this.getAttributeItem('outlets')}
                 {this.getAttributeItem('wifi')}
-                {this.getAttributeItem('coffee')}
                 {this.getAttributeItem('food')}
+                {this.getAttributeItem('coffee')}
+                {this.getAttributeItem('drinks')}
+                {this.getAttributeItem('vibe')}
+                {this.getAttributeItem('loft')}
             </div>
         )
     }
