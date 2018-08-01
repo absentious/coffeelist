@@ -44,6 +44,13 @@ export const listsort = (sortKey, nested) => {
     }
 }
 
+export const distsort = (lat, lng) => {
+    return {
+        type: 'cafe_sort_location',
+        payload: { lat, lng }
+    }
+}
+
 export const clearModalAttr = (attr, selection) => {
     return {
         type: 'clearModalAttr',
@@ -97,5 +104,13 @@ export const closeModal = () => {
     return {
         type: 'modal_close',
         payload: ""
+    }
+}
+
+
+export const getLocation = (loc) => {
+    return {
+        type: 'get_location',
+        payload: loc
     }
 }

@@ -28,7 +28,6 @@ class CafeItem extends Component {
     }
 
     displayHorizontalAttributes() {
-        console.log(this.state.name);
         //if this.props.selected == false
         if (true) {
             return <CafeAttributes 
@@ -85,6 +84,28 @@ class CafeItem extends Component {
         }
     }
 
+    distance(lat1, lon1, lat2, lon2, unit) {
+        console.log(lat1);
+        console.log(lon1);
+        console.log(lat2);
+        console.log(lon2);
+        
+        var radlat1 = Math.PI * lat1/180
+        var radlat2 = Math.PI * lat2/180
+        var theta = lon1-lon2
+        var radtheta = Math.PI * theta/180
+        var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+        if (dist > 1) {
+            dist = 1;
+        }
+        dist = Math.acos(dist)
+        dist = dist * 180/Math.PI
+        dist = dist * 60 * 1.1515
+        if (unit=="K") { dist = dist * 1.609344 }
+        if (unit=="N") { dist = dist * 0.8684 }
+        return dist.toFixed(1);
+    }
+
     render () {
         return (
             <div class='cafeRow_container'>
@@ -94,6 +115,9 @@ class CafeItem extends Component {
                             <CafeNeighborhood neighborhood={this.state.neighborhood} sort={this.props.sortFlag} />
                         </div>
                         {this.displayAddress()}
+                    </div>
+                    <div class='cafeDistance'>
+                        <p class='cafeDistance_text'>{this.distance(this.state.cafe.lat, this.state.cafe.lng, this.props.lat, this.props.lng, "M")} mi</p>
                     </div>
                     <CafeName name={this.state.name}>
                         
@@ -116,7 +140,10 @@ const mapStateToProps = (state, ownProps) => {
     const selectIdentifier = ownProps.cafe.name + " " + ownProps.cafe.address.street;
     const selected = selectIdentifier === state.selectedName;
     const sortFlag = state.sortFlag;
-    return { selected, sortFlag };
+    const lat = state.location.lat;
+    const lng = state.location.lng;
+
+    return { selected, sortFlag, lat, lng };
 };
 
 
