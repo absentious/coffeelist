@@ -70,6 +70,7 @@ class LocationSwitch extends Component {
                     {this.displayLocButton("San Francisco", "SF")}
                     {this.displayLocButton("Los Angeles", "LA")}
                     {this.displayLocButton("New York City", "NYC")}
+                    {this.displayLocButton("London", "LDN")}
                     {this.displayLocButton("Tokyo", "TYO")}
                 </div>
             </div>
