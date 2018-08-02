@@ -44,7 +44,7 @@ class AddCafeModal extends Component {
             lng: map_lng
         }
 
-        this.props.addCafe(cafeStructured, "San Francisco");
+        this.props.addCafe(cafeStructured, this.props.city.name);
         this.props.closeModal();
     }
 
@@ -99,8 +99,9 @@ const mapStateToProps = state => {
 
     const addCafeData = state.modalAttr.addCafeData;
     const modalAttr = state.modalAttr;
+    const city = state.city;
 
-    return { addCafeData, modalAttr };
+    return { addCafeData, modalAttr, city };
 };
 
 export default connect(mapStateToProps, actions)(AddCafeModal);

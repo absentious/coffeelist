@@ -1,0 +1,38 @@
+
+.form_flow {
+    display: flex;
+    flex-direction: row;
+}
+
+.form_input_holder {
+    margin-left: $pad-normal;
+}
+
+.form_input {
+    width: 7rem;
+    height: $pad-normal;
+    border: 4px solid $color-theme-1;
+    border-radius: $pad-thin;
+    margin-left: $pad-thin;
+}
+
+.locButton {
+    width: 4rem;
+    height: 2rem;
+    background-color: $color-theme-4;
+    border-radius: 1rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-right: $pad-thin;
+}
+
+.locButton_text {
+    font-family: $font-family-0;
+    font-size: $txt-size-lg;
+    color: $color-theme-0;
+    padding-left: $pad-thin;
+    padding-right: $pad-thin;
+    line-height: 2rem;
+    letter-spacing: .1rem;
+}

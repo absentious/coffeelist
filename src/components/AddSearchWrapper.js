@@ -14,7 +14,7 @@ const AddSearchWrapper = compose(
     googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${MAPAPIKEY}&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: <div style={{  height: `100%`, marginRight: `0` }} />,
     containerElement: <div style={{ width: `60%`, height: `10rem` }} />,
-    mapElement: <div style={{ height: `100%` }} />,
+    mapElement: <div style={{ height: `100%` }} />
   }),
   lifecycle({
     componentWillMount() {
@@ -23,7 +23,7 @@ const AddSearchWrapper = compose(
       this.setState({
         bounds: null,
         center: {
-            lat: 37.7749, lng: -122.4194 
+            lat: this.props.city.lat, lng: this.props.city.lng
         },
         markers: [],
         onMapMounted: ref => {
@@ -310,8 +310,9 @@ const mapStateToProps = state => {
     const cafes = _.map(state.cafes, (val, uid) => {
         return { ...val, uid };
     });
+    const city = state.city;
 
-    return { cafes };
+    return { cafes, city };
 };
 
 export default connect(mapStateToProps, actions)(AddSearchWrapper);
