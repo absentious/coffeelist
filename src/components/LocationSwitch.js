@@ -44,22 +44,33 @@ class LocationSwitch extends Component {
         this.props.cityCheck(city);
     }
 
+    displayLocButton(city, abbr) {
+        const selectedCity = city === this.props.city.name;
+
+        if (selectedCity) {
+            return (
+                <div class='locButton' onClick={this.switchCity.bind(this, city)}>
+                    <p class='locButton_text' >{abbr}</p>
+                </div>
+            )
+        }
+        else {
+            return(
+                <div class='locButton_inactive' onClick={this.switchCity.bind(this, city)}>
+                    <p class='locButton_text_inactive' >{abbr}</p>
+                </div>
+            )
+        }
+    }
+
     render () {
         return (
             <div class='s_location'>
                 <div class='form_flow'>
-                    <div class='locButton' onClick={this.switchCity.bind(this, "San Francisco")}>
-                        <p class='locButton_text' >SF</p>
-                    </div>
-                    <div class='locButton' onClick={this.switchCity.bind(this, "Los Angeles")}>
-                        <p class='locButton_text' >LA</p>
-                    </div>
-                    <div class='locButton' onClick={this.switchCity.bind(this, "New York City")}>
-                        <p class='locButton_text' >NYC</p>
-                    </div>
-                    <div class='locButton' onClick={this.switchCity.bind(this, "Tokyo")}>
-                        <p class='locButton_text' >TYO</p>
-                    </div>
+                    {this.displayLocButton("San Francisco", "SF")}
+                    {this.displayLocButton("Los Angeles", "LA")}
+                    {this.displayLocButton("New York City", "NYC")}
+                    {this.displayLocButton("Tokyo", "TYO")}
                 </div>
             </div>
         )
@@ -67,9 +78,9 @@ class LocationSwitch extends Component {
 }
 
 const mapStateToProps = state => {
-    const modalOpen = state.modalOpen.open;
-
-    return { modalOpen };
+    const city = state.city;
+    console.log(city);
+    return { city };
 };
 
 export default connect(mapStateToProps, actions)(LocationSwitch);
