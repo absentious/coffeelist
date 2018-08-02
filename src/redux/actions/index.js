@@ -17,10 +17,10 @@ export const clearCafe = () => {
 };
 
 
-export const cafeFetch = () => {
+export const cafeFetch = (city) => {
     //console.log("fetch start");
     return (dispatch) => {
-        firebase.database().ref(`/cafes`)
+        firebase.database().ref(`/${city}/`)
             .on('value', snapshot => {
                 dispatch({ type: 'get_cafe_data', payload: snapshot.val() });
             }, error => {
@@ -79,12 +79,12 @@ export const mapClear = () => {
     }
 }
 
-export const addCafe = (cafeStructured) => {
+export const addCafe = (cafeStructured, city) => {
 
     return (dispatch) => {
         console.log(cafeStructured);
         dispatch({ type: 'add_cafe' });
-        firebase.database().ref(`cafes`)
+        firebase.database().ref(`/${city}/cafes`)
         .push(cafeStructured)
         .then(() => {
             dispatch({ type: 'add_cafe_done' });
@@ -112,5 +112,12 @@ export const getLocation = (loc) => {
     return {
         type: 'get_location',
         payload: loc
+    }
+}
+
+export const setLocation = (lat, lng) => {
+    return {
+        type: 'set_location',
+        payload: { lat, lng }
     }
 }

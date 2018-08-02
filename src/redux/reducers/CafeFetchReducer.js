@@ -28,7 +28,7 @@ export default (state = null, action) => {
     switch (action.type) {
         case 'get_cafe_data':
             console.log(action);
-            return action.payload;
+            return action.payload.cafes;
         case 'cafe_sort':
             const stateArr = _.map(state, (val, uid) => {
                 return { ...val };
