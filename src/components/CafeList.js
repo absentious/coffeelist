@@ -16,7 +16,8 @@ class CafeList extends Component {
     }
 
     componentWillMount() {
-        this.props.cafeFetch("San Francisco");
+        this.props.cityCheck("San Francisco");
+        //this.props.cafeFetch("San Francisco"); <- deprecated
 
         navigator.geolocation.getCurrentPosition((loc) => {
             console.log('The location in lat lon format is: [', loc.coords.latitude, ',', loc.coords.longitude, ']');
@@ -44,8 +45,8 @@ const mapStateToProps = state => {
 
     const cityLat = state.city.lat;
     const cityLng = state.city.lng;
-    console.log(cityLat);
-    console.log(cityLng);
+    //console.log(cityLat);
+    //console.log(cityLng);
     return { cafes, cityLat, cityLng };
 };
 

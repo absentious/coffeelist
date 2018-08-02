@@ -45,6 +45,11 @@
   flex-direction: row;
 }
 
+.s_header_verticalflow {
+  display: flex;
+  flex-direction: column;
+}
+
 .s_header_title {
   padding-left: 24px;
 }
@@ -379,6 +384,44 @@
 }
 
 .openModalButton_text {
+  font-family: "Rubik", monospace;
+  font-size: 20px;
+  color: #fdfdfd;
+  padding-left: 12px;
+  padding-right: 12px;
+  line-height: 2rem;
+  letter-spacing: 0.1rem;
+}
+
+.form_flow {
+  display: flex;
+  flex-direction: row;
+}
+
+.form_input_holder {
+  margin-left: 24px;
+}
+
+.form_input {
+  width: 7rem;
+  height: 24px;
+  border: 4px solid #252222;
+  border-radius: 12px;
+  margin-left: 12px;
+}
+
+.locButton {
+  width: 4rem;
+  height: 2rem;
+  background-color: #ee363c;
+  border-radius: 1rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.locButton_text {
   font-family: "Rubik", monospace;
   font-size: 20px;
   color: #fdfdfd;

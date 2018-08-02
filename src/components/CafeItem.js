@@ -85,10 +85,10 @@ class CafeItem extends Component {
     }
 
     distance(lat1, lon1, lat2, lon2, unit) {
-        console.log(lat1);
-        console.log(lon1);
-        console.log(lat2);
-        console.log(lon2);
+        //console.log(lat1);
+        //console.log(lon1);
+        //console.log(lat2);
+        //console.log(lon2);
         
         var radlat1 = Math.PI * lat1/180
         var radlat2 = Math.PI * lat2/180

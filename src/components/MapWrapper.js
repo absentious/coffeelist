@@ -12,8 +12,8 @@ const MAPAPIKEY = "AIzaSyCOVCDo4noFBDxGblbuw8XUomeXGo3AEXE";
 
 const MapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
-        defaultZoom={12}
-        defaultCenter={{ lat: 37.7649, lng: -122.4394 }}
+        defaultZoom={11}
+        center={{ lat: props.city.lat, lng: props.city.lng }}
         options={{ styles: [
             {
                 "featureType": "all",
@@ -217,6 +217,7 @@ class MapWrapper extends Component {
                 containerElement={<div style={{ height: `32rem` }} />}
                 mapElement={<div style={{ height: `100%` }} />}
                 cafes={this.props.cafes}
+                city={this.props.city}
             />
         )
     }
@@ -226,8 +227,9 @@ const mapStateToProps = state => {
     const cafes = _.map(state.cafes, (val, uid) => {
         return { ...val, uid };
     });
+    const city = state.city;
 
-    return { cafes };
+    return { cafes, city };
 };
 
 export default connect(mapStateToProps, actions)(MapWrapper);

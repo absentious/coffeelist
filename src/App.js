@@ -13,8 +13,10 @@ import SortBar from './components/SortBar';
 import MapWrapper from './components/MapWrapper';
 import AddCafeButton from './components/AddCafeButton';
 import AddCafeModal_Container from './components/AddCafeModal_Container';
+import UserReduxForm_Container from './components/UserReduxForm_Container';
 
 import iconData from './data/attributeIcons.json';
+import LocationSwitch from './components/LocationSwitch';
 
 class App extends Component {
 
@@ -39,6 +41,8 @@ class App extends Component {
 
     }
 
+
+
     render() {
         return (
             <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
@@ -48,13 +52,15 @@ class App extends Component {
                             <div class='s_splitscreen'>
                                 <div class='s_main'>
                                     <div class='s_header'>
-                                        <div class='s_header_divide'>
-                                            <div><svg class='cafe_icon_black' xmlns="http://www.w3.org/2000/svg" width='48' height='48' viewBox="0 0 24 24">
-                                                <path d={iconData.coffee[0].svg} />
-                                            </svg></div>
-                                            <div class='s_header_title'><p class='t_header'> the sf caffeinatory</p></div>
+                                        <div class='s_header_verticalflow'>
+                                            <div class='s_header_divide'>
+                                                <div><svg class='cafe_icon_black' xmlns="http://www.w3.org/2000/svg" width='48' height='48' viewBox="0 0 24 24">
+                                                    <path d={iconData.coffee[0].svg} />
+                                                </svg></div>
+                                                <div class='s_header_title'><p class='t_header'> the caffeinatory</p></div>
+                                            </div>
+                                            <LocationSwitch />
                                         </div>
-                                        
                                     </div>
                                     <div>
                                         <AddCafeModal_Container />
@@ -62,7 +68,7 @@ class App extends Component {
                                     <SortBar />
                                 </div>
                                 <div class='s_user'>
-                                    <AddCafeButton />
+                                    <UserReduxForm_Container />
                                 </div>
                             </div>
                             <div class='s_splitscreen'>

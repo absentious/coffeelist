@@ -44,6 +44,11 @@
     flex-direction: row;
 }
 
+.s_header_verticalflow {
+    display: flex;
+    flex-direction: column;
+}
+
 .s_header_title {
     padding-left: $pad-normal;
 }
