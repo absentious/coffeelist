@@ -44,7 +44,7 @@ class AddCafeModal extends Component {
             lng: map_lng
         }
 
-        this.props.addCafe(cafeStructured);
+        this.props.addCafe(cafeStructured, "San Francisco");
         this.props.closeModal();
     }
 

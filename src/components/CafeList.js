@@ -16,13 +16,17 @@ class CafeList extends Component {
     }
 
     componentWillMount() {
+        this.props.cafeFetch("San Francisco");
+
         navigator.geolocation.getCurrentPosition((loc) => {
             console.log('The location in lat lon format is: [', loc.coords.latitude, ',', loc.coords.longitude, ']');
             this.props.getLocation({ lat: loc.coords.latitude, lng: loc.coords.longitude });
         });
-
-        this.props.cafeFetch();
     }
+
+
+
+
 
     render () {
         return (
@@ -37,7 +41,12 @@ const mapStateToProps = state => {
     const cafes = _.map(state.cafes, (val, uid) => {
         return { ...val, uid };
     });
-    return { cafes };
+
+    const cityLat = state.city.lat;
+    const cityLng = state.city.lng;
+    console.log(cityLat);
+    console.log(cityLng);
+    return { cafes, cityLat, cityLng };
 };
 
 export default connect(mapStateToProps, actions)(CafeList);
