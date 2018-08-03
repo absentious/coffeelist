@@ -72,6 +72,15 @@ class CafeItem extends Component {
                             {this.state.cafe.address.zip}
                         </p>
                     </div>
+                </div>
+            )
+        }
+    }
+
+    displayAddress_m() {
+        if (this.props.selected) {
+            return (
+                <div>
                     <div class='m_cafeAddress'>
                         <p class='cafeAddress_text'>
                             {this.state.cafe.address.street} <br />
@@ -129,7 +138,7 @@ class CafeItem extends Component {
                         <p class='cafeDistance_text'>{this.distance(this.state.cafe.lat, this.state.cafe.lng, this.props.lat, this.props.lng, "M")} mi</p>
                     </div>
                     <CafeName name={this.state.name}>
-                        {this.displayAddress()}
+                        {this.displayAddress_m()}
                         {this.displayVerticalAttributes()}
                     </CafeName>
                     {this.displayHorizontalAttributes()}
