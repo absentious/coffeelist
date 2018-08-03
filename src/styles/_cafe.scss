@@ -9,6 +9,14 @@
     justify-content: flex-end;
 }
 
+.cafeArrow {
+
+}
+
+.cafeArrow_m {
+    display: none;
+}
+
 .cafeRow {
     display: flex;
     flex-direction: row;
@@ -53,7 +61,7 @@
     font-weight: 500;
     color: $color-theme-4;
     line-height: $txt-size-lg;
-    letter-spacing: .1rem;
+    letter-spacing: .05rem;
 }
 
 .cafeDistance {
@@ -68,7 +76,7 @@
     font-weight: 500;
     color: $color-theme-4;
     line-height: $txt-size-lg;
-    letter-spacing: .1rem;
+    letter-spacing: .05rem;
 }
 
 .cafeName_container {
@@ -86,6 +94,10 @@
     margin-right: $pad-normal;
 }
 
+.m_cafeAddress {
+    display: none;
+}
+
 .cafeAddress_text {
     padding-top: $pad-offset;
     font-family: $font-family-0;
@@ -93,7 +105,7 @@
     
     color: $color-theme-1;
     
-    letter-spacing: .1rem;
+    letter-spacing: .05rem;
 }
 
 .cafeAttributes_container {
@@ -102,6 +114,10 @@
     display: flex;
     flex-direction: row;
     margin-top: $pad-offset;
+}
+
+.m_cafeAttributes_container {
+    display: none;
 }
 
 .cafeAttributes_vertical {
@@ -178,9 +194,141 @@
 }
 
 .sortArrow {
+    margin-right: $pad-normal;
     opacity: .3;
 }
 
 .sortArrow:hover {
     opacity: 1;
+}
+
+svg .attSVG {
+    width: $txt-size-lg;
+    height: $txt-size-lg;
+}
+
+
+@media screen and (max-width: 480px) {
+    .cafeRow {
+        margin-bottom: $mpad-thin;
+    }
+
+    .cafeArrow {
+        display: none;
+    }
+    
+    .cafeArrow_m {
+        display: block;
+    }
+
+    .cafeNeighborhood_container {
+        max-width: 12%;
+        margin-right: $mpad-normal;
+    }
+
+    .cafeNeighborhood {
+        max-width: 12%;
+        margin-bottom: $mpad-normal;
+        margin-right: $mpad-normal;
+    }
+
+    .cafeNeighborhood_text {
+        font-size: $mtxt-size-sm;
+        line-height: $mtxt-size-sm;
+        font-weight: 500;
+    }
+
+    .cafeAddress {
+        display: none;
+    }
+
+    .m_cafeAddress {
+        display: block;
+    }
+
+    .cafeAddress_text {
+        font-size: $mtxt-size-sm;
+        line-height: $mtxt-size-sm;
+    }
+
+    .cafeDistance {
+        width: 5%;
+        min-width: 5%;
+        margin-right: $mpad-normal;
+    }
+
+    .cafeDistance_text {
+        font-size: $mtxt-size-sm;
+        line-height: $mtxt-size-sm;
+        font-weight: 500;
+    }
+
+    .cafeName_container {
+        width: 58%;
+        min-width: 58%;
+        margin-right: $mpad-normal;
+    }
+
+    .cafeName_text {
+        font-size: $mtxt-size-lg;
+        padding-top: $mpad-offset;
+    }
+
+    .cafeAttributes_container {
+        display: none;
+    }
+
+    .m_cafeAttributes_container {
+        margin-left: 0;
+        margin-right: 0;
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+    }
+
+    .cafeAttributes_vertical {
+        margin-top: $mpad-normal;
+        margin-bottom: $mpad-thin;
+    }
+
+    .cafeAttributes_vertical_row {
+        margin-bottom: $mpad-thin;
+    }
+
+    .cafeAttributes_vertical_text {
+        font-size: $mtxt-size-sm;
+        line-height: $mtxt-size-lg;
+        padding-top: $mpad-thin;
+    }
+
+    .cafeAttributes_item {
+        margin-right: $mpad-normal;
+    }
+
+    .sortArrow {
+        margin-right: $mpad-normal;
+    }
+
+    .mnopad {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .cafeName_text {
+        font-size: $smtxt-size-lg;
+    }
+
+    .cafeName_container {
+        width: 55%;
+        min-width: 55%;
+    }
+
+    .cafeAttributes_item {
+        margin-right: $mpad-thin;
+    }
+
+    .sortArrow {
+        margin-right: $mpad-thin;
+    }
 }

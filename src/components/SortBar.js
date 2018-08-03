@@ -51,53 +51,157 @@ class SortBar extends Component {
             <div class='cafeRow_container'>
                 <div class='cafeRow'>
                     <div class='cafeNeighborhood_container'>
-                        <div class='cafeNeighborhood nopad sortArrow' onClick={this.sortNeighborhood.bind(this)}>
-                            <Icon 
-                                colorClass="cafe_icon_black"
-                                svgData={iconData.downArrow.svg}
-                                size="20"
-                            />
+                        <div class='cafeNeighborhood nopad sortArrow mnopad' onClick={this.sortNeighborhood.bind(this)}>
+                            <div class='cafeArrow'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="20"
+                                />
+                            </div>
+                            <div class='cafeArrow_m'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="14"
+                                />
+                            </div>
                         </div>
                     </div>
                     <div class='cafeDistance' onClick={this.sortDist.bind(this)}>
                         <div class='sortName sortArrow'>
-                            <Icon 
-                                colorClass="cafe_icon_black"
-                                svgData={iconData.downArrow.svg}
-                                size="20"
-                            />
+                            <div class='cafeArrow'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="20"
+                                />
+                            </div>
+                            <div class='cafeArrow_m'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="14"
+                                />
+                            </div>
                         </div>
                     </div>
                     <div class='cafeName_container'  onClick={this.sortName.bind(this)}>
                         <div class='sortName sortArrow'>
-                            <Icon 
-                                colorClass="cafe_icon_black"
-                                svgData={iconData.downArrow.svg}
-                                size="20"
-                            />
+                            <div class='cafeArrow'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="20"
+                                />
+                            </div>
+                            <div class='cafeArrow_m'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="14"
+                                />
+                            </div>
                         </div>
                     </div>
                     <div class='cafeAttributes_container'>
                         <div class='sortArrow' onClick={this.sortOutlet.bind(this)}>
-                            <CafeAttributes_Item 
-                                colorClass="cafe_icon_black"
-                                svgData={iconData.downArrow.svg}
-                                size="20"
-                            />
+                            <div class='cafeArrow'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="20"
+                                />
+                            </div>
+                            <div class='cafeArrow_m'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="14"
+                                />
+                            </div>
                         </div>
                         <div class='sortArrow' onClick={this.sortWifi.bind(this)}>
-                            <CafeAttributes_Item 
-                                colorClass="cafe_icon_black"
-                                svgData={iconData.downArrow.svg}
-                                size="20"
-                            />
+                            <div class='cafeArrow'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="20"
+                                />
+                            </div>
+                            <div class='cafeArrow_m'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="14"
+                                />
+                            </div>
                         </div>
                         <div class='sortArrow' onClick={this.sortFood.bind(this)}>
-                            <CafeAttributes_Item 
-                                colorClass="cafe_icon_black"
-                                svgData={iconData.downArrow.svg}
-                                size="20"
-                            />
+                            <div class='cafeArrow'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="20"
+                                />
+                            </div>
+                            <div class='cafeArrow_m'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="14"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class='m_cafeAttributes_container'>
+                        <div class='sortArrow' onClick={this.sortOutlet.bind(this)}>
+                            <div class='cafeArrow'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="20"
+                                />
+                            </div>
+                            <div class='cafeArrow_m'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="14"
+                                />
+                            </div>
+                        </div>
+                        <div class='sortArrow' onClick={this.sortWifi.bind(this)}>
+                            <div class='cafeArrow'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="20"
+                                />
+                            </div>
+                            <div class='cafeArrow_m'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="14"
+                                />
+                            </div>
+                        </div>
+                        <div class='sortArrow' onClick={this.sortFood.bind(this)}>
+                            <div class='cafeArrow'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="20"
+                                />
+                            </div>
+                            <div class='cafeArrow_m'>
+                                <Icon 
+                                    colorClass="cafe_icon_black"
+                                    svgData={iconData.downArrow.svg}
+                                    size="14"
+                                />
+                            </div>
                         </div>
                     </div>
                     <div class='cafeArrow_container'>

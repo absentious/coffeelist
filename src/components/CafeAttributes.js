@@ -32,14 +32,14 @@ class CafeAttributes extends Component {
         });
     }
 
-    getSubAttribute(AttrObj) {
+    getSubAttribute(AttrObj, size) {
         if (AttrObj.display) {
             return (
                 <div class='cafeAttributes_vertical_row'>
                     <CafeAttributes_Item 
                         colorClass={`cafe_icon_black ${AttrObj.opacity}`}
                         svgData={AttrObj.svg}
-                        size="20"
+                        size={size}
                     />
                     <p class={`cafeAttributes_vertical_text ${AttrObj.color}`}>{AttrObj.label}</p>
                 </div>
@@ -47,17 +47,17 @@ class CafeAttributes extends Component {
         }
     }
 
-    getAttributeItem(attr) {
+    getAttributeItem(attr, size) {
         var AttrObj = iconData[attr][this.state[attr]];
         if (this.state.vertical == false)
             return <CafeAttributes_Item 
                 colorClass={`cafe_icon_black ${AttrObj.opacity}`}
                 svgData={AttrObj.svg}
-                size="20"
+                size={size}
             />
         else 
             return (
-                this.getSubAttribute(AttrObj)
+                this.getSubAttribute(AttrObj, size)
             )
     }
 
@@ -66,21 +66,43 @@ class CafeAttributes extends Component {
 
         if (this.state.vertical == false)
             return (
-                <div class='cafeAttributes_container'>
-                    {this.getAttributeItem('outlets')}
-                    {this.getAttributeItem('wifi')}
-                    {this.getAttributeItem('food')}
+                <div>
+                    <div class='cafeAttributes_container'>
+                        {this.getAttributeItem('outlets', 20)}
+                        {this.getAttributeItem('wifi', 20)}
+                        {this.getAttributeItem('food', 20)}
+                    </div>
+                    <div class='m_cafeAttributes_container'>
+                        {this.getAttributeItem('outlets', 14)}
+                        {this.getAttributeItem('wifi', 14)}
+                        {this.getAttributeItem('food', 14)}
+                    </div>
                 </div>
             )
         return (
-            <div class='cafeAttributes_vertical'>
-                {this.getAttributeItem('outlets')}
-                {this.getAttributeItem('wifi')}
-                {this.getAttributeItem('food')}
-                {this.getAttributeItem('coffee')}
-                {this.getAttributeItem('drinks')}
-                {this.getAttributeItem('vibe')}
-                {this.getAttributeItem('loft')}
+            <div>
+                <div class='cafeAttributes_container'>
+                    <div class='cafeAttributes_vertical'>
+                        {this.getAttributeItem('outlets', 20)}
+                        {this.getAttributeItem('wifi', 20)}
+                        {this.getAttributeItem('food', 20)}
+                        {this.getAttributeItem('coffee', 20)}
+                        {this.getAttributeItem('drinks', 20)}
+                        {this.getAttributeItem('vibe', 20)}
+                        {this.getAttributeItem('loft', 20)}
+                    </div>
+                </div>
+                <div class='m_cafeAttributes_container'>
+                    <div class='cafeAttributes_vertical'>
+                        {this.getAttributeItem('outlets', 14)}
+                        {this.getAttributeItem('wifi', 14)}
+                        {this.getAttributeItem('food', 14)}
+                        {this.getAttributeItem('coffee', 14)}
+                        {this.getAttributeItem('drinks', 14)}
+                        {this.getAttributeItem('vibe', 14)}
+                        {this.getAttributeItem('loft', 14)}
+                    </div>
+                </div>
             </div>
         )
     }

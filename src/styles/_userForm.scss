@@ -57,3 +57,27 @@
     line-height: calc(2rem - 8px);
     letter-spacing: .1rem;
 }
+
+@media screen and (max-width: 480px) {
+    .locButton {
+        width: 2.5rem;
+        height: 1.25rem;
+        border: 2px solid $color-theme-4;
+    }
+
+    .locButton_inactive {
+        width: 2.5rem;
+        height: 1.25rem;
+        border: 2px solid $color-theme-4;
+    }
+
+    .locButton_text {
+        font-size: $mtxt-size-lg;
+        line-height: calc(1.4rem - 4px);
+    }
+
+    .locButton_text_inactive {
+        font-size: $mtxt-size-lg;
+        line-height: calc(1.4rem - 4px);
+    }
+}

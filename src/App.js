@@ -54,10 +54,13 @@ class App extends Component {
                                     <div class='s_header'>
                                         <div class='s_header_verticalflow'>
                                             <div class='s_header_divide'>
-                                                <div><svg class='cafe_icon_black' xmlns="http://www.w3.org/2000/svg" width='48' height='48' viewBox="0 0 24 24">
+                                                <div class='s_header_icon'><svg class='cafe_icon_black' xmlns="http://www.w3.org/2000/svg" width='48' height='48' viewBox="0 0 24 24">
                                                     <path d={iconData.coffee[0].svg} />
                                                 </svg></div>
-                                                <div class='s_header_title'><p class='t_header'> the caffeinatory</p></div>
+                                                <div class='s_header_icon_m'><svg class='cafe_icon_black' xmlns="http://www.w3.org/2000/svg" width='32' height='32' viewBox="0 0 24 24">
+                                                    <path d={iconData.coffee[0].svg} />
+                                                </svg></div>
+                                                <div class='s_header_title'><p class='t_header'> caffeinatory <span class='s_header_title_light'>[pre-alpha]</span></p></div>
                                             </div>
                                             <LocationSwitch />
                                         </div>

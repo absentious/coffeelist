@@ -51,7 +51,11 @@
 }
 
 .s_header_title {
-  padding-left: 24px;
+  padding-left: 12px;
+}
+
+.s_header_title_light {
+  opacity: 0.2;
 }
 
 .s_search {
@@ -74,6 +78,82 @@
   margin-top: 12px;
 }
 
+.s_header_icon_m {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .s_allContent {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .s_topSpace {
+    margin-top: 12px;
+  }
+
+  .s_header {
+    margin-bottom: 12px;
+  }
+
+  .s_main {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .s_user {
+    display: none;
+  }
+
+  .s_map {
+    display: none;
+  }
+
+  .s_splitscreen {
+    flex-direction: column;
+  }
+
+  .s_header_title_light {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .s_header_divide {
+    margin-bottom: 10px;
+  }
+
+  .s_header_icon {
+    display: none;
+  }
+
+  .s_header_icon_m {
+    display: block;
+    margin-top: 3px;
+  }
+
+  .s_list {
+    flex: 1 1 auto;
+  }
+}
+@media screen and (max-width: 375px) {
+  .s_list {
+    height: 24rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  .s_list {
+    height: 24rem;
+  }
+
+  .s_header_title_light {
+    display: none;
+  }
+}
+@media screen and (min-height: 760px) {
+  .s_list {
+    height: 36rem;
+  }
+}
 .t_header {
   font-size: 36px;
   color: #252222;
@@ -82,6 +162,11 @@
   letter-spacing: 3px;
 }
 
+@media screen and (max-width: 480px) {
+  .t_header {
+    font-size: 28px;
+  }
+}
 .searchBox {
   border-radius: 30px;
   border: 4px;
@@ -98,6 +183,10 @@
   flex: 1;
   flex-direction: row;
   justify-content: flex-end;
+}
+
+.cafeArrow_m {
+  display: none;
 }
 
 .cafeRow {
@@ -144,7 +233,7 @@
   font-weight: 500;
   color: #ee363c;
   line-height: 20px;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
 }
 
 .cafeDistance {
@@ -159,7 +248,7 @@
   font-weight: 500;
   color: #ee363c;
   line-height: 20px;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
 }
 
 .cafeName_container {
@@ -177,12 +266,16 @@
   margin-right: 24px;
 }
 
+.m_cafeAddress {
+  display: none;
+}
+
 .cafeAddress_text {
   padding-top: 6px;
   font-family: "Rubik", monospace;
   font-size: 12px;
   color: #252222;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
 }
 
 .cafeAttributes_container {
@@ -191,6 +284,10 @@
   display: flex;
   flex-direction: row;
   margin-top: 6px;
+}
+
+.m_cafeAttributes_container {
+  display: none;
 }
 
 .cafeAttributes_vertical {
@@ -262,6 +359,7 @@
 }
 
 .sortArrow {
+  margin-right: 24px;
   opacity: 0.3;
 }
 
@@ -269,6 +367,134 @@
   opacity: 1;
 }
 
+svg .attSVG {
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .cafeRow {
+    margin-bottom: 6px;
+  }
+
+  .cafeArrow {
+    display: none;
+  }
+
+  .cafeArrow_m {
+    display: block;
+  }
+
+  .cafeNeighborhood_container {
+    max-width: 12%;
+    margin-right: 10px;
+  }
+
+  .cafeNeighborhood {
+    max-width: 12%;
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+
+  .cafeNeighborhood_text {
+    font-size: 8px;
+    line-height: 8px;
+    font-weight: 500;
+  }
+
+  .cafeAddress {
+    display: none;
+  }
+
+  .m_cafeAddress {
+    display: block;
+  }
+
+  .cafeAddress_text {
+    font-size: 8px;
+    line-height: 8px;
+  }
+
+  .cafeDistance {
+    width: 5%;
+    min-width: 5%;
+    margin-right: 10px;
+  }
+
+  .cafeDistance_text {
+    font-size: 8px;
+    line-height: 8px;
+    font-weight: 500;
+  }
+
+  .cafeName_container {
+    width: 58%;
+    min-width: 58%;
+    margin-right: 10px;
+  }
+
+  .cafeName_text {
+    font-size: 14px;
+    padding-top: 3px;
+  }
+
+  .cafeAttributes_container {
+    display: none;
+  }
+
+  .m_cafeAttributes_container {
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+  }
+
+  .cafeAttributes_vertical {
+    margin-top: 10px;
+    margin-bottom: 6px;
+  }
+
+  .cafeAttributes_vertical_row {
+    margin-bottom: 6px;
+  }
+
+  .cafeAttributes_vertical_text {
+    font-size: 8px;
+    line-height: 14px;
+    padding-top: 6px;
+  }
+
+  .cafeAttributes_item {
+    margin-right: 10px;
+  }
+
+  .sortArrow {
+    margin-right: 10px;
+  }
+
+  .mnopad {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 375px) {
+  .cafeName_text {
+    font-size: 12px;
+  }
+
+  .cafeName_container {
+    width: 55%;
+    min-width: 55%;
+  }
+
+  .cafeAttributes_item {
+    margin-right: 6px;
+  }
+
+  .sortArrow {
+    margin-right: 6px;
+  }
+}
 .modal_custom_overlay {
   background: rgba(255, 255, 255, 0.7);
 }
@@ -452,6 +678,29 @@
   letter-spacing: 0.1rem;
 }
 
+@media screen and (max-width: 480px) {
+  .locButton {
+    width: 2.5rem;
+    height: 1.25rem;
+    border: 2px solid #ee363c;
+  }
+
+  .locButton_inactive {
+    width: 2.5rem;
+    height: 1.25rem;
+    border: 2px solid #ee363c;
+  }
+
+  .locButton_text {
+    font-size: 14px;
+    line-height: calc(1.4rem - 4px);
+  }
+
+  .locButton_text_inactive {
+    font-size: 14px;
+    line-height: calc(1.4rem - 4px);
+  }
+}
 * {
   margin: 0;
   padding: 0;
