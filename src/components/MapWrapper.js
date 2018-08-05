@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
 import MarkerWrapper from './MarkerWrapper';
 
-const MAPAPIKEY = "AIzaSyCOVCDo4noFBDxGblbuw8XUomeXGo3AEXE";
+const MAPAPIKEY = "AIzaSyBABXrbgUP5XYi-sGHvJ_R9KuLlugctX8s";
 
 const MapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
@@ -23,7 +23,7 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
                         "saturation": 36
                     },
                     {
-                        "color": "#333333"
+                        "color": "#333030"
                     },
                     {
                         "lightness": 40
@@ -59,7 +59,7 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
                 "elementType": "geometry.fill",
                 "stylers": [
                     {
-                        "color": "#fefefe"
+                        "color": "#fefafa"
                     },
                     {
                         "lightness": "20"
@@ -71,7 +71,7 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
                 "elementType": "geometry.stroke",
                 "stylers": [
                     {
-                        "color": "#fefefe"
+                        "color": "#fefafa"
                     },
                     {
                         "lightness": 17
@@ -86,7 +86,7 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
                 "elementType": "geometry",
                 "stylers": [
                     {
-                        "color": "#f5f5f5"
+                        "color": "#f5f1f1"
                     },
                     {
                         "lightness": "-4"
@@ -98,7 +98,7 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
                 "elementType": "geometry",
                 "stylers": [
                     {
-                        "color": "#f5f5f5"
+                        "color": "#f5f1f1"
                     },
                     {
                         "lightness": 21
@@ -185,7 +185,7 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
                 "elementType": "geometry",
                 "stylers": [
                     {
-                        "color": "#fdfdfd"
+                        "color": "#f8f4f4"
                     },
                     {
                         "lightness": "0"
@@ -214,7 +214,7 @@ class MapWrapper extends Component {
                 isMarkerShown
                 googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&key=${MAPAPIKEY}&libraries=geometry,drawing,places`}
                 loadingElement={<div style={{ height: `100%` }} />}
-                containerElement={<div style={{ height: `32rem` }} />}
+                containerElement={<div style={{ height: `30rem` }} />}
                 mapElement={<div style={{ height: `100%` }} />}
                 cafes={this.props.cafes}
                 city={this.props.city}

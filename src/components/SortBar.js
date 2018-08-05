@@ -50,24 +50,6 @@ class SortBar extends Component {
         return (
             <div class='cafeRow_container'>
                 <div class='cafeRow'>
-                    <div class='cafeNeighborhood_container'>
-                        <div class='cafeNeighborhood nopad sortArrow mnopad' onClick={this.sortNeighborhood.bind(this)}>
-                            <div class='cafeArrow'>
-                                <Icon 
-                                    colorClass="cafe_icon_black"
-                                    svgData={iconData.downArrow.svg}
-                                    size="20"
-                                />
-                            </div>
-                            <div class='cafeArrow_m'>
-                                <Icon 
-                                    colorClass="cafe_icon_black"
-                                    svgData={iconData.downArrow.svg}
-                                    size="14"
-                                />
-                            </div>
-                        </div>
-                    </div>
                     <div class='cafeDistance' onClick={this.sortDist.bind(this)}>
                         <div class='sortName sortArrow'>
                             <div class='cafeArrow'>

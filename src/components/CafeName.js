@@ -18,7 +18,7 @@ class CafeName extends Component {
 
         return (
             <div class='cafeName_container'>
-                <p class='cafeName_text'>{this.state.name}</p>
+                <p class='cafeName_text t_bold'>{this.state.name}</p>
                 {this.props.children}
             </div>
         )

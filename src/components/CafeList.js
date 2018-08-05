@@ -13,6 +13,7 @@ class CafeList extends Component {
     }
 
     componentWillReceiveProps(newProps) {
+        console.log(document.getElementById('s_list').scrollTop);
     }
 
     componentWillMount() {
@@ -31,7 +32,7 @@ class CafeList extends Component {
 
     render () {
         return (
-            <div class='s_list'>
+            <div class='s_list' id='s_list'>
                 {this.props.cafes.map(item => <CafeItem cafe={item} key={item.name+" "+item.address.street}/>)}
             </div>
         )

@@ -11,9 +11,9 @@
 .form_input {
     width: 7rem;
     height: $pad-normal;
-    border: 4px solid $color-theme-1;
     border-radius: $pad-thin;
     margin-left: $pad-thin;
+    opacity: 0;
 }
 
 .locButton {

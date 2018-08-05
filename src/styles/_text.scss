@@ -6,8 +6,28 @@
     letter-spacing: 3px;
 }
 
+.t_bold {
+    color: $color-text-1;
+    font-weight: 600;
+}
+
+.t_light {
+    color: $color-text-1;
+    font-weight: 300;
+    opacity: 0.54;
+}
+
+.t_tagline {
+    padding-top: 12px;
+    margin-right: $pad-normal;
+}
+
 @media screen and (max-width: 480px) {
     .t_header {
         font-size: $mtxt-size-super;
+    }
+
+    .t_tagline {
+        margin-bottom: $mpad-normal;
     }
 }

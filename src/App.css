@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Overpass+Mono:400,600,700|Rubik:400,500");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 .s_allContent {
   width: 70rem;
   margin-left: auto;
@@ -52,6 +53,11 @@
 
 .s_header_title {
   padding-left: 12px;
+  width: 20rem;
+}
+
+.i_titlebanner {
+  width: 100%;
 }
 
 .s_header_title_light {
@@ -66,7 +72,7 @@
 
 .s_list {
   width: 100%;
-  height: 32rem;
+  height: 30rem;
   overflow: auto;
   display: flex;
   flex-direction: column;
@@ -80,6 +86,12 @@
 
 .s_header_icon_m {
   display: none;
+}
+
+.s_location {
+  display: flex;
+  flex-direction: row;
+  margin-top: 24px;
 }
 
 @media screen and (max-width: 480px) {
@@ -118,6 +130,11 @@
     letter-spacing: 1px;
   }
 
+  .s_location {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
   .s_header_divide {
     margin-bottom: 10px;
   }
@@ -149,11 +166,6 @@
     display: none;
   }
 }
-@media screen and (min-height: 760px) {
-  .s_list {
-    height: 36rem;
-  }
-}
 .t_header {
   font-size: 36px;
   color: #252222;
@@ -162,9 +174,29 @@
   letter-spacing: 3px;
 }
 
+.t_bold {
+  color: #4B3434;
+  font-weight: 600;
+}
+
+.t_light {
+  color: #4B3434;
+  font-weight: 300;
+  opacity: 0.54;
+}
+
+.t_tagline {
+  padding-top: 12px;
+  margin-right: 24px;
+}
+
 @media screen and (max-width: 480px) {
   .t_header {
     font-size: 28px;
+  }
+
+  .t_tagline {
+    margin-bottom: 10px;
   }
 }
 .searchBox {
@@ -176,6 +208,10 @@
 
 .cafeRow_container {
   position: relative;
+}
+
+.cafePad {
+  padding-bottom: 24px;
 }
 
 .cafeArrow_container {
@@ -231,24 +267,20 @@
   font-family: "Rubik", monospace;
   font-size: 12px;
   font-weight: 500;
-  color: #ee363c;
+  color: #2CC761;
   line-height: 20px;
   letter-spacing: 0.05rem;
 }
 
 .cafeDistance {
   margin-right: 24px;
-  width: 3rem;
+  width: 6rem;
 }
 
 .cafeDistance_text {
-  margin-top: 6px;
-  font-family: "Rubik", monospace;
-  font-size: 12px;
-  font-weight: 500;
-  color: #ee363c;
-  line-height: 20px;
-  letter-spacing: 0.05rem;
+  font-family: "Source Code Pro", "Overpass Mono", monospace;
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .cafeName_container {
@@ -257,13 +289,15 @@
 }
 
 .cafeName_text {
-  font-family: "Overpass Mono", monospace;
+  font-family: "Source Code Pro", "Overpass Mono", monospace;
   font-size: 20px;
   color: #252222;
 }
 
 .cafeAddress {
+  margin-top: 24px;
   margin-right: 24px;
+  margin-left: 24px;
 }
 
 .m_cafeAddress {
@@ -271,11 +305,9 @@
 }
 
 .cafeAddress_text {
-  padding-top: 6px;
-  font-family: "Rubik", monospace;
-  font-size: 12px;
-  color: #252222;
-  letter-spacing: 0.05rem;
+  font-family: "Source Code Pro", "Overpass Mono", monospace;
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .cafeAttributes_container {
@@ -283,7 +315,6 @@
   margin-right: 12px;
   display: flex;
   flex-direction: row;
-  margin-top: 6px;
 }
 
 .m_cafeAttributes_container {
@@ -298,13 +329,9 @@
 }
 
 .cafeAttributes_vertical_text {
-  font-family: "Overpass Mono", monospace;
-  font-size: 12px;
-  color: #252222;
-  padding-left: 12px;
-  padding-right: 12px;
-  line-height: 20px;
-  letter-spacing: 0.1rem;
+  font-family: "Source Code Pro", "Overpass Mono", monospace;
+  font-size: 20px;
+  opacity: 0.54;
 }
 
 .cafeAttributes_vertical_row {
@@ -315,6 +342,7 @@
 
 .cafeAttributes_item {
   margin-right: 24px;
+  margin-top: 3px;
 }
 
 .cafe_inactive {
@@ -332,13 +360,13 @@
 
 .cafe_icon_black {
   fill: #252222;
-  color: #252222;
+  color: #4B3434;
 }
 
 .cafe_icon_green {
-  fill: #ee363c;
-  color: #ee363c;
-  font-weight: 600;
+  fill: #2CC761;
+  color: #2CC761;
+  opacity: 1;
 }
 
 .cafe_expandedPadding {
@@ -373,10 +401,6 @@ svg .attSVG {
 }
 
 @media screen and (max-width: 480px) {
-  .cafeRow {
-    margin-bottom: 6px;
-  }
-
   .cafeArrow {
     display: none;
   }
@@ -397,13 +421,13 @@ svg .attSVG {
   }
 
   .cafeNeighborhood_text {
-    font-size: 8px;
-    line-height: 8px;
+    font-size: 14px;
+    line-height: 14px;
     font-weight: 500;
   }
 
   .cafeAddress {
-    display: none;
+    margin-left: 0;
   }
 
   .m_cafeAddress {
@@ -411,31 +435,30 @@ svg .attSVG {
   }
 
   .cafeAddress_text {
-    font-size: 8px;
-    line-height: 8px;
+    font-size: 14px;
   }
 
   .cafeDistance {
-    width: 5%;
-    min-width: 5%;
+    width: 15%;
+    min-width: 15%;
     margin-right: 10px;
   }
 
   .cafeDistance_text {
-    font-size: 8px;
-    line-height: 8px;
+    font-size: 14px;
     font-weight: 500;
+    padding-top: 6px;
   }
 
   .cafeName_container {
-    width: 58%;
-    min-width: 58%;
+    width: 60%;
+    min-width: 60%;
     margin-right: 10px;
   }
 
   .cafeName_text {
     font-size: 14px;
-    padding-top: 3px;
+    padding-top: 6px;
   }
 
   .cafeAttributes_container {
@@ -460,9 +483,9 @@ svg .attSVG {
   }
 
   .cafeAttributes_vertical_text {
-    font-size: 8px;
-    line-height: 14px;
+    font-size: 14px;
     padding-top: 6px;
+    padding-left: 10px;
   }
 
   .cafeAttributes_item {
@@ -483,8 +506,8 @@ svg .attSVG {
   }
 
   .cafeName_container {
-    width: 55%;
-    min-width: 55%;
+    width: 60%;
+    min-width: 60%;
   }
 
   .cafeAttributes_item {
@@ -500,7 +523,7 @@ svg .attSVG {
 }
 
 .modal_custom {
-  background: #fdfdfd;
+  background: #F8F4F4;
   border-radius: 24px;
   border: 8px solid #252222;
   height: 45rem;
@@ -546,7 +569,7 @@ svg .attSVG {
   width: 100%;
   height: 46px;
   opacity: 0.26;
-  background-color: #fdfdfd;
+  background-color: #F8F4F4;
   border-radius: 23px;
 }
 
@@ -572,7 +595,7 @@ svg .attSVG {
 }
 
 .modalButtonText {
-  font-family: "Overpass Mono", monospace;
+  font-family: "Source Code Pro", "Overpass Mono", monospace;
   font-size: 12px;
   color: #252222;
   padding-left: 12px;
@@ -591,7 +614,7 @@ svg .attSVG {
   margin-bottom: 24px;
   height: 48px;
   border-radius: 24px;
-  background-color: #ee363c;
+  background-color: #2CC761;
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -602,7 +625,7 @@ svg .attSVG {
 .openModalButton {
   width: 8rem;
   height: 2rem;
-  background-color: #ee363c;
+  background-color: #2CC761;
   border-radius: 1rem;
   display: flex;
   align-content: center;
@@ -612,7 +635,7 @@ svg .attSVG {
 .openModalButton_text {
   font-family: "Rubik", monospace;
   font-size: 20px;
-  color: #fdfdfd;
+  color: #F8F4F4;
   padding-left: 12px;
   padding-right: 12px;
   line-height: 2rem;
@@ -631,15 +654,15 @@ svg .attSVG {
 .form_input {
   width: 7rem;
   height: 24px;
-  border: 4px solid #252222;
   border-radius: 12px;
   margin-left: 12px;
+  opacity: 0;
 }
 
 .locButton {
   width: 4rem;
   height: 2rem;
-  background-color: #ee363c;
+  background-color: #2CC761;
   border-radius: 1rem;
   display: flex;
   align-content: center;
@@ -650,7 +673,7 @@ svg .attSVG {
 .locButton_inactive {
   width: 4rem;
   height: 2rem;
-  border: 4px solid #ee363c;
+  border: 4px solid #2CC761;
   border-radius: 1rem;
   display: flex;
   align-content: center;
@@ -661,7 +684,7 @@ svg .attSVG {
 .locButton_text {
   font-family: "Rubik", monospace;
   font-size: 20px;
-  color: #fdfdfd;
+  color: #F8F4F4;
   padding-left: 12px;
   padding-right: 12px;
   line-height: 2rem;
@@ -671,7 +694,7 @@ svg .attSVG {
 .locButton_text_inactive {
   font-family: "Rubik", monospace;
   font-size: 20px;
-  color: #ee363c;
+  color: #2CC761;
   padding-left: 12px;
   padding-right: 12px;
   line-height: calc(2rem - 8px);
@@ -682,13 +705,13 @@ svg .attSVG {
   .locButton {
     width: 2.5rem;
     height: 1.25rem;
-    border: 2px solid #ee363c;
+    border: 2px solid #2CC761;
   }
 
   .locButton_inactive {
     width: 2.5rem;
     height: 1.25rem;
-    border: 2px solid #ee363c;
+    border: 2px solid #2CC761;
   }
 
   .locButton_text {
@@ -708,8 +731,8 @@ svg .attSVG {
 }
 
 body, html {
-  color: #fdfdfd;
-  background-color: #fdfdfd;
+  color: #F8F4F4;
+  background-color: #F8F4F4;
   font-family: "Overpass Mono", "Courier New", Courier, monospace;
   font-size: 18px;
   position: relative;

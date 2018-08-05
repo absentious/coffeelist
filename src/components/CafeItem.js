@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import '../App.css';
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
@@ -15,16 +16,23 @@ class CafeItem extends Component {
             cafe: {},
             name: "",
             neighborhood: "",
-            expanded: false
+            expanded: false,
+            ref: ""
         }
     }
 
     componentWillReceiveProps(newProps) {
         this.setState({ cafe: _.clone(newProps.cafe, true), name: newProps.cafe.name, neighborhood: newProps.cafe.neighborhood });
+        var divID = '#' + this.id;
     }
 
     componentWillMount() {
-        this.setState({ cafe: this.props.cafe, name: this.props.cafe.name, neighborhood: this.props.cafe.neighborhood });
+        this.setState({ 
+            cafe: this.props.cafe, 
+            name: this.props.cafe.name, 
+            neighborhood: this.props.cafe.neighborhood,
+            ref: this.props.cafe.name + " " + this.props.cafe.address.street
+         });
     }
 
     displayHorizontalAttributes() {
@@ -66,7 +74,9 @@ class CafeItem extends Component {
             return (
                 <div>
                     <div class='cafeAddress'>
-                        <p class='cafeAddress_text'>
+                        <p class='cafeAddress_text t_bold'>
+                            {this.state.cafe.neighborhood} </p>
+                        <p class='cafeAddress_text t_light'>
                             {this.state.cafe.address.street} <br />
                             {this.state.cafe.address.citystate} <br />
                             {this.state.cafe.address.zip}
@@ -126,19 +136,13 @@ class CafeItem extends Component {
 
     render () {
         return (
-            <div class='cafeRow_container'>
+            <div class='cafeRow_container cafePad' ref="current" >
                 <div class='cafeRow' onClick={this.selectionProcess.bind(this)}>
-                    <div class='cafeNeighborhood_container'>
-                        <div class='cafeNeighborhood'>
-                            <CafeNeighborhood neighborhood={this.state.neighborhood} sort={this.props.sortFlag} />
-                        </div>
-                        {this.displayAddress()}
-                    </div>
                     <div class='cafeDistance'>
-                        <p class='cafeDistance_text'>{this.distance(this.state.cafe.lat, this.state.cafe.lng, this.props.lat, this.props.lng, "M")} mi</p>
+                        <p class='cafeDistance_text t_light'>{this.distance(this.state.cafe.lat, this.state.cafe.lng, this.props.lat, this.props.lng, "M")} mi</p>
                     </div>
                     <CafeName name={this.state.name}>
-                        {this.displayAddress_m()}
+                        {this.displayAddress()}
                         {this.displayVerticalAttributes()}
                     </CafeName>
                     {this.displayHorizontalAttributes()}

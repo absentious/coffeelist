@@ -2,6 +2,10 @@
     position: relative;
 }   
 
+.cafePad {
+    padding-bottom: $pad-normal;
+}
+
 .cafeArrow_container {
     display: flex;
     flex: 1;
@@ -66,17 +70,13 @@
 
 .cafeDistance {
     margin-right: $pad-normal;
-    width: 3rem;
+    width: 6rem;
 }
 
 .cafeDistance_text {
-    margin-top: $pad-offset;
-    font-family: $font-family-0;
-    font-size: $txt-size-sm;
-    font-weight: 500;
-    color: $color-theme-4;
-    line-height: $txt-size-lg;
-    letter-spacing: .05rem;
+    font-family: $font-family-1;
+    font-size: $txt-size-lg;
+    font-weight: 300;
 }
 
 .cafeName_container {
@@ -88,10 +88,13 @@
     font-family: $font-family-1;
     font-size: $txt-size-lg;
     color: $color-theme-1;
+    
 }
 
 .cafeAddress {
+    margin-top: $pad-normal;
     margin-right: $pad-normal;
+    margin-left: $pad-normal;
 }
 
 .m_cafeAddress {
@@ -99,13 +102,9 @@
 }
 
 .cafeAddress_text {
-    padding-top: $pad-offset;
-    font-family: $font-family-0;
-    font-size: $txt-size-sm;
-    
-    color: $color-theme-1;
-    
-    letter-spacing: .05rem;
+    font-family: $font-family-1;
+    font-size: $txt-size-lg;
+    font-weight: 300;
 }
 
 .cafeAttributes_container {
@@ -113,7 +112,6 @@
     margin-right: $pad-thin;
     display: flex;
     flex-direction: row;
-    margin-top: $pad-offset;
 }
 
 .m_cafeAttributes_container {
@@ -129,12 +127,8 @@
 
 .cafeAttributes_vertical_text {
     font-family: $font-family-1;
-    font-size: $txt-size-sm;
-    color: $color-theme-1;
-    padding-left: $pad-thin;
-    padding-right: $pad-thin;
-    line-height: $txt-size-lg;
-    letter-spacing: .1rem;
+    font-size: $txt-size-lg;
+    opacity: 0.54;
 }
 
 .cafeAttributes_vertical_row {
@@ -145,6 +139,7 @@
 
 .cafeAttributes_item {
     margin-right: $pad-normal;
+    margin-top: $pad-smoffset;
 }
 
 .cafe_inactive {
@@ -163,13 +158,13 @@
 
 .cafe_icon_black {
     fill: $color-theme-1;
-    color: $color-theme-1;
+    color: $color-text-1;
 }
 
 .cafe_icon_green {
     fill: $color-theme-4;
     color: $color-theme-4;
-    font-weight: 600;
+    opacity: 1;
 }
 
 .cafe_expandedPadding {
@@ -210,7 +205,6 @@ svg .attSVG {
 
 @media screen and (max-width: 480px) {
     .cafeRow {
-        margin-bottom: $mpad-thin;
     }
 
     .cafeArrow {
@@ -233,13 +227,13 @@ svg .attSVG {
     }
 
     .cafeNeighborhood_text {
-        font-size: $mtxt-size-sm;
-        line-height: $mtxt-size-sm;
+        font-size: $mtxt-size-lg;
+        line-height: $mtxt-size-lg;
         font-weight: 500;
     }
 
     .cafeAddress {
-        display: none;
+        margin-left: 0;
     }
 
     .m_cafeAddress {
@@ -247,31 +241,30 @@ svg .attSVG {
     }
 
     .cafeAddress_text {
-        font-size: $mtxt-size-sm;
-        line-height: $mtxt-size-sm;
+        font-size: $mtxt-size-lg;
     }
 
     .cafeDistance {
-        width: 5%;
-        min-width: 5%;
+        width: 15%;
+        min-width: 15%;
         margin-right: $mpad-normal;
     }
 
     .cafeDistance_text {
-        font-size: $mtxt-size-sm;
-        line-height: $mtxt-size-sm;
+        font-size: $mtxt-size-lg;
         font-weight: 500;
+        padding-top: $pad-offset;
     }
 
     .cafeName_container {
-        width: 58%;
-        min-width: 58%;
+        width: 60%;
+        min-width: 60%;
         margin-right: $mpad-normal;
     }
 
     .cafeName_text {
         font-size: $mtxt-size-lg;
-        padding-top: $mpad-offset;
+        padding-top: $pad-offset;
     }
 
     .cafeAttributes_container {
@@ -296,9 +289,9 @@ svg .attSVG {
     }
 
     .cafeAttributes_vertical_text {
-        font-size: $mtxt-size-sm;
-        line-height: $mtxt-size-lg;
+        font-size: $mtxt-size-lg;
         padding-top: $mpad-thin;
+        padding-left: $mpad-normal;
     }
 
     .cafeAttributes_item {
@@ -320,8 +313,8 @@ svg .attSVG {
     }
 
     .cafeName_container {
-        width: 55%;
-        min-width: 55%;
+        width: 60%;
+        min-width: 60%;
     }
 
     .cafeAttributes_item {

@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Overpass+Mono:400,600,700|Rubik:400,500');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
 
 $font-family-0: 'Rubik', monospace;
-$font-family-1: 'Overpass Mono', monospace;
+$font-family-1: 'Source Code Pro', 'Overpass Mono', monospace;
 
 $color-theme-0-dep: #f3eded;
-$color-theme-0: #fdfdfd;
-$color-theme-4: #ee363c;
+$color-theme-0: #F8F4F4;
+$color-theme-4: #2CC761;
 $color-theme-1: #252222;
 $color-theme-1-a: rgba(223,137,49,.0);
 $color-theme-2: #444444;
 $color-theme-3: #D93636;
 $color-theme-5: #60D243;
+
+$color-text-1: #4B3434;
+
 
 $txt-size-sm: 12px;
 $txt-size-lg: 20px;
@@ -32,6 +37,7 @@ $pad-thin: 12px;
 $pad-normal: 24px;
 $pad-wide: 48px;
 $pad-offset: 6px;
+$pad-smoffset: 3px;
 
 $mpad-thin: 6px;
 $mpad-normal: 10px;

@@ -7,7 +7,7 @@ import * as actions from '../redux/actions';
 import { SearchBox } from "react-google-maps/lib/components/places/SearchBox";
 const { compose, withProps, lifecycle } = require("recompose");
 
-const MAPAPIKEY = "AIzaSyAiA16Q_9vDXOLOxWmtBz7w2Q3ao_DwZxI";
+const MAPAPIKEY = "AIzaSyABWS8s0OfEihnSO4l-g4pJc6eF9VFFFE8";
 
 const AddSearchWrapper = compose(
   withProps({

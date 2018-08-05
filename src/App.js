@@ -60,7 +60,9 @@ class App extends Component {
                                                 <div class='s_header_icon_m'><svg class='cafe_icon_black' xmlns="http://www.w3.org/2000/svg" width='32' height='32' viewBox="0 0 24 24">
                                                     <path d={iconData.coffee[0].svg} />
                                                 </svg></div>
-                                                <div class='s_header_title'><p class='t_header'> caffeinatory <span class='s_header_title_light'>[pre-alpha]</span></p></div>
+                                                <div class='s_header_title'>
+                                                    <img class='i_titlebanner' src='http://ayh.io/images/bannertemp.png' />
+                                                </div>
                                             </div>
                                             <LocationSwitch />
                                         </div>

@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
 import MarkerWrapper from './MarkerWrapper';
 
-const MAPAPIKEY = "AIzaSyCOVCDo4noFBDxGblbuw8XUomeXGo3AEXE";
+const MAPAPIKEY = "AIzaSyBABXrbgUP5XYi-sGHvJ_R9KuLlugctX8s";
 
 const MapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
