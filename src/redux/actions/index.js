@@ -8,6 +8,14 @@ export const selectCafe = (cafeName) => {
     };
 };
 
+export const clearSelectedCafe = () => {
+    //console.log(cafeName);
+    return {
+        type: 'clear_select',
+        payload: ""
+    };
+};
+
 export const clearCafe = () => {
     //console.log(cafeName);
     return {

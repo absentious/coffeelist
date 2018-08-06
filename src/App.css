@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Overpass+Mono:400,600,700|Rubik:400,500");
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 .s_allContent {
-  width: 70rem;
+  width: 60rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -12,7 +12,7 @@
 }
 
 .s_topSpace {
-  margin-top: 90px;
+  margin-top: 60px;
 }
 
 .s_main {
@@ -130,7 +130,7 @@
   }
 
   .s_header_title {
-    width: 16rem;
+    width: 70%;
     padding-left: 6px;
   }
 
@@ -300,7 +300,6 @@
 .cafeName_text {
   font-family: "Source Code Pro", "Overpass Mono", monospace;
   font-size: 20px;
-  color: #252222;
 }
 
 .cafeAddress {
@@ -359,6 +358,7 @@
 
 .cafe_active {
   opacity: 1;
+  font-weight: 600;
 }
 
 .cafe_icon_red {
@@ -739,10 +739,10 @@ svg .attSVG {
 }
 
 body, html {
-  color: #F8F4F4;
+  color: #4B3434;
   background-color: #F8F4F4;
-  font-family: "Overpass Mono", "Courier New", Courier, monospace;
-  font-size: 18px;
+  font-family: "Source Code Pro", "Overpass Mono", "Courier New", Courier, monospace;
+  font-size: 20px;
   position: relative;
 }
 

@@ -22,6 +22,14 @@ const selectStyles = {
         fontSize: '20px',
         padding: '12px'
     }),
+    singleValue: styles => ({
+        ...styles, 
+        color: '#4B3434', 
+        paddingLeft: '12px', 
+        fontFamily: 'Source Code Pro', 
+        fontWeight: 600,
+        fontSize: '20px'
+    }),
     placeholder: styles => ({
         ...styles, 
         color: '#4B3434', 
@@ -34,7 +42,7 @@ const selectStyles = {
     }),
     menu: styles => ({...styles, backgroundColor: '#F8F4F4', border: 'none'}),
     valueContainer: styles => ({...styles, height: '36px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
-    control: styles => ({...styles, width: '20rem', height: '48px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
+    control: styles => ({...styles, width: '12rem', height: '48px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
 };
 
 class LocationSwitch extends Component {
@@ -47,11 +55,12 @@ class LocationSwitch extends Component {
         this.state = {
             add: false,
             options: [
-                { value: 'SF', label: 'San Francisco' },
-                { value: 'LA', label: 'Los Angeles' },
-                { value: 'NY', label: 'New York City' },
-                { value: 'LDN', label: 'London' }
-            ]
+                { value: 'San Francisco', label: 'San Francisco' },
+                { value: 'Los Angeles', label: 'Los Angeles' },
+                { value: 'New York City', label: 'New York City' },
+                { value: 'London', label: 'London' }
+            ],
+            selectedOption: { value: 'San Francisco', label: 'San Francisco' }
         }
     }
 
@@ -60,6 +69,10 @@ class LocationSwitch extends Component {
 
     componentWillMount() {
         this.props.cityCheck("San Francisco");
+    }
+
+    componentDidMount() {
+        this.switchCity("San Francisco");
     }
 
     updateEmail(text) {
@@ -78,11 +91,13 @@ class LocationSwitch extends Component {
 
     switchCity(city) {
         console.log(city);
+        this.props.clearSelectedCafe();
         this.props.cityCheck(city);
     }
 
     handleChange = (selectedOption) => {
         this.switchCity(selectedOption.label);
+        this.setState({ selectedOption: selectedOption });
         console.log(`Option selected:`, selectedOption);
     }
 
@@ -112,11 +127,11 @@ class LocationSwitch extends Component {
                     <p class='cafeName_text t_light t_tagline'>I am working in </p>
                 </div>
                 <Select
+                    defaultValue={{ label: 'San Francisco', value: 'San Francisco' }}
+                    placeholder={<p class='cafeName_text t_light'>{this.props.city.name}</p>}
                     className="basic-single"
                     classNamePrefix="select"
-                    value={this.props.city.name}
-                    defaultValue={this.state.options[0]}
-                    placeholder={this.props.city.name}
+                    value={this.state.selectedOption}
                     onChange={this.handleChange}
                     options={this.state.options}
                     styles={selectStyles}

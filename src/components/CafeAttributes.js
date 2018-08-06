@@ -41,7 +41,7 @@ class CafeAttributes extends Component {
                         svgData={AttrObj.svg}
                         size={size}
                     />
-                    <p class={`cafeAttributes_vertical_text ${AttrObj.color}`}>{AttrObj.label}</p>
+                    <p class={`cafeAttributes_vertical_text ${AttrObj.color} ${AttrObj.opacity}`}>{AttrObj.label}</p>
                 </div>
             )
         }

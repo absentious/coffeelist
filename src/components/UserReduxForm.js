@@ -7,11 +7,11 @@ let UserReduxForm = props => {
     <form onSubmit={handleSubmit}>{/* form body*/}
         <div class='form_flow'>
             <div class='form_input_holder'>
-                <label htmlFor="email" className="cafeAddress_text">Email</label>
+                <label htmlFor="email" className="cafeAddress_text"></label>
                 <Field name="email" component="input" type="text" className="form_input" />
             </div>
             <div class='form_input_holder'>
-                <label htmlFor="pass" className="cafeAddress_text">Password</label>
+                <label htmlFor="pass" className="cafeAddress_text"></label>
                 <Field name="password" component="input" type="password" className="form_input" />
             </div>
             <div class='form_input_holder'>

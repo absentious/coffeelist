@@ -87,7 +87,6 @@
 .cafeName_text {
     font-family: $font-family-1;
     font-size: $txt-size-lg;
-    color: $color-theme-1;
     
 }
 
@@ -147,6 +146,7 @@
 
 .cafe_active {
     opacity: 1;
+    font-weight: 600;
 }
 
 .cafe_icon_red {
