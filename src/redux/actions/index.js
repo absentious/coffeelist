@@ -188,3 +188,10 @@ export const logoutUser = () => {
         });
     };
 }
+
+export const setCenter = (lat, lng) => {
+    return {
+        type: 'set_center',
+        payload: { lat: lat, lng: lng }
+    }
+}

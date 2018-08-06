@@ -14,6 +14,8 @@ class CafeName extends Component {
         this.setState({ name: this.props.name })
     }
 
+
+
     render () {
 
         return (

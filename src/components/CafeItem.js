@@ -35,6 +35,13 @@ class CafeItem extends Component {
          });
     }
 
+    scrollToElementD(){
+        //var topPos = document.getElementById('s_list').offsetTop;
+        var scrollElement = document.getElementById(this.props.selectedName);
+        scrollElement.scrollIntoView();
+        
+    }
+
     displayHorizontalAttributes() {
         //if this.props.selected == false
         if (true) {
@@ -55,6 +62,7 @@ class CafeItem extends Component {
     displayVerticalAttributes() {
 
         if (this.props.selected) {
+            this.scrollToElementD();
             return <CafeAttributes 
                 outlets={this.state.cafe.attributes.outlets}
                 coffee={this.state.cafe.attributes.coffee}
@@ -71,6 +79,9 @@ class CafeItem extends Component {
 
     displayAddress() {
         if (this.props.selected) {
+
+
+
             return (
                 <div>
                     <div class='cafeAddress'>
@@ -109,6 +120,7 @@ class CafeItem extends Component {
         }
         else {
             this.props.selectCafe(this.state.cafe.name+" "+this.state.cafe.address.street);
+            this.props.setCenter(this.state.cafe.lat, this.state.cafe.lng);
         }
     }
 
@@ -136,7 +148,7 @@ class CafeItem extends Component {
 
     render () {
         return (
-            <div class='cafeRow_container cafePad' ref="current" >
+            <div class='cafeRow_container cafePad' id={this.state.cafe.name + " " + this.state.cafe.address.street} >
                 <div class='cafeRow' onClick={this.selectionProcess.bind(this)}>
                     <div class='cafeDistance'>
                         <p class='cafeDistance_text t_light'>{this.distance(this.state.cafe.lat, this.state.cafe.lng, this.props.lat, this.props.lng, "M")} mi</p>
@@ -161,11 +173,12 @@ class CafeItem extends Component {
 const mapStateToProps = (state, ownProps) => {
     const selectIdentifier = ownProps.cafe.name + " " + ownProps.cafe.address.street;
     const selected = selectIdentifier === state.selectedName;
+    const selectedName = state.selectedName;
     const sortFlag = state.sortFlag;
     const lat = state.location.lat;
     const lng = state.location.lng;
 
-    return { selected, sortFlag, lat, lng };
+    return { selected, sortFlag, lat, lng, selectedName };
 };
 
 
