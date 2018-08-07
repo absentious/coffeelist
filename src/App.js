@@ -48,8 +48,8 @@ class App extends Component {
             <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
                 <div className="App">
                     <div class='s_allContent'>
-                        <div class='s_topSpace'>
-                            <div class='s_splitscreen'>
+                        <div class='s_splitscreen'>
+                            <div class='s_topSpace'>
                                 <div class='s_main'>
                                     <div class='s_header'>
                                         <div class='s_header_verticalflow'>
@@ -78,19 +78,22 @@ class App extends Component {
                                         <AddCafeModal_Container />
                                     </div>
                                     <SortBar />
+
+                                    <div class='s_main'>
+                                        <CafeList />
+                                    </div>
                                 </div>
                                 <div class='s_user'>
                                     <UserReduxForm_Container />
                                 </div>
                             </div>
-                            <div class='s_splitscreen'>
-                                <div class='s_main'>
-                                    <CafeList />
-                                </div>
-                                <div class='s_map'>
-                                    <MapWrapper />
-                                </div>
+
+                            <div class='s_map'>
+                                <MapWrapper />
                             </div>
+                        </div>
+
+                        <div class='s_splitscreen'>
                         </div>
                         
                     </div>
