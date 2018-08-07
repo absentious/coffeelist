@@ -56,6 +56,10 @@
   width: 20rem;
 }
 
+.s_header_title_m {
+  display: none;
+}
+
 .i_titlebanner {
   width: 100%;
 }
@@ -154,7 +158,17 @@
 
   .s_header_icon_m {
     display: block;
-    margin-top: 10px;
+    margin-top: 12px;
+  }
+
+  .s_header_title {
+    display: none;
+  }
+
+  .s_header_title_m {
+    display: block;
+    padding-left: 12px;
+    width: 20rem;
   }
 
   .s_list {
@@ -184,12 +198,12 @@
 }
 
 .t_bold {
-  color: #4B3434;
+  color: #3B3434;
   font-weight: 600;
 }
 
 .t_light {
-  color: #4B3434;
+  color: #3B3434;
   font-weight: 300;
   opacity: 0.54;
 }
@@ -367,8 +381,8 @@
 }
 
 .cafe_icon_black {
-  fill: #252222;
-  color: #4B3434;
+  fill: #3B3434;
+  color: #3B3434;
 }
 
 .cafe_icon_green {
@@ -739,7 +753,7 @@ svg .attSVG {
 }
 
 body, html {
-  color: #4B3434;
+  color: #3B3434;
   background-color: #F8F4F4;
   font-family: "Source Code Pro", "Overpass Mono", "Courier New", Courier, monospace;
   font-size: 20px;

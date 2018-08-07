@@ -57,8 +57,7 @@ class LocationSwitch extends Component {
             options: [
                 { value: 'San Francisco', label: 'San Francisco' },
                 { value: 'Los Angeles', label: 'Los Angeles' },
-                { value: 'New York City', label: 'New York City' },
-                { value: 'London', label: 'London' }
+                { value: 'New York City', label: 'New York City' }
             ],
             selectedOption: { value: 'San Francisco', label: 'San Francisco' }
         }

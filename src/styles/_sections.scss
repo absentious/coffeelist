@@ -54,6 +54,10 @@
     width: 20rem;
 }
 
+.s_header_title_m {
+    display: none;
+}
+
 .i_titlebanner {
     width: 100%;
 }
@@ -153,7 +157,17 @@
 
     .s_header_icon_m {
         display: block;
-        margin-top: 10px;
+        margin-top: 12px;
+    }
+
+    .s_header_title {
+        display: none;
+    }
+
+    .s_header_title_m {
+        display: block;
+        padding-left: $pad-thin;
+        width: 20rem;
     }
 
     .s_list {
