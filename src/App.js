@@ -38,10 +38,9 @@ class App extends Component {
             messagingSenderId: "779895610961"
         };
         firebase.initializeApp(config);
+        document.title = 'caffinity - your cafe grind resource'
 
     }
-
-
 
     render() {
         return (
