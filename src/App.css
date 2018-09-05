@@ -4,7 +4,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 100vw;
-  height: 100vh;
+  height: 95vh;
 }
 
 .s_splitscreen {
@@ -15,7 +15,7 @@
 .s_topSpace {
   margin-top: 60px;
   margin-left: auto;
-  margin-right: 5vw;
+  margin-right: 1vw;
 }
 
 .s_main {
@@ -177,19 +177,10 @@
   }
 
   .s_list {
-    height: 70vh;
-  }
-}
-@media screen and (max-width: 375px) {
-  .s_list {
-    height: 70vh;
+    height: 65vh;
   }
 }
 @media screen and (max-width: 360px) {
-  .s_list {
-    height: 70vh;
-  }
-
   .s_header {
     margin-bottom: 2vh;
     height: 20vh;
@@ -317,8 +308,8 @@
 }
 
 .cafeName_container {
-  width: 20rem;
-  min-width: 20rem;
+  width: 18rem;
+  min-width: 18rem;
 }
 
 .cafeName_text {
