@@ -213,9 +213,9 @@ class MapWrapper extends Component {
             <MapComponent
                 isMarkerShown
                 googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&key=${MAPAPIKEY}&libraries=geometry,drawing,places`}
-                loadingElement={<div style={{ height: `100%` }} />}
-                containerElement={<div style={{ height: `100%` }} />}
-                mapElement={<div style={{ height: `100%` }} />}
+                loadingElement={<div style={{ height: `100vh` }} />}
+                containerElement={<div style={{ height: `100vh` }} />}
+                mapElement={<div style={{ height: `100vh` }} />}
                 cafes={this.props.cafes}
                 city={this.props.city}
             />

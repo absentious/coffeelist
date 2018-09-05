@@ -1,6 +1,8 @@
 .s_allContent {
-    margin-left: 10rem;
+    margin-left: auto;
     margin-right: auto;
+    width: 100vw;
+    height: 100vh;
 }
 
 .s_splitscreen {
@@ -10,15 +12,17 @@
 
 .s_topSpace {
     margin-top: 60px;
+    margin-left: auto;
+    margin-right: 5vw;
 }
 
 .s_main {
-    max-width: 40rem;
+    max-width: 50vw;
     width: 40rem;
 }
 
 .s_map {
-    width: 100%;
+    width: 40vw;
 }
 
 .s_user {
@@ -27,6 +31,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    display: none;
 }
 
 .s_header {
@@ -101,17 +106,19 @@
 
 @media screen and (max-width: 480px) {
     .s_allContent {
-        width: 100%;
         padding: $pad-thin;
         margin: 0;
     }
 
     .s_topSpace {
         margin-top: $pad-thin;
+        margin-left: 0;
+        margin-right:0;
     }
 
     .s_header {
-        margin-bottom: $pad-thin;
+        margin-bottom: 2vh;
+        height: 18vh
     }
 
     .s_main {
@@ -166,23 +173,27 @@
     .s_header_title_m {
         display: block;
         padding-left: 6px;
-        width: 20rem;
     }
 
     .s_list {
-        flex: 1 1 auto;
+        height: 70vh;
     }
 }
 
 @media screen and (max-width: 375px) {
     .s_list {
-        height: 24rem;
+        height: 70vh;
     }
 }
 
 @media screen and (max-width: 360px) {
     .s_list {
-        height: 24rem;
+        height: 70vh;
+    }
+
+    .s_header {
+        margin-bottom: 2vh;
+        height: 20vh
     }
 
     .s_header_title_light {

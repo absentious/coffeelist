@@ -91,10 +91,6 @@ class App extends Component {
                                 <MapWrapper />
                             </div>
                         </div>
-
-                        <div class='s_splitscreen'>
-                        </div>
-                        
                     </div>
                 </div>
             </Provider>
