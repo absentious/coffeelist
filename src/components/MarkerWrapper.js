@@ -24,6 +24,7 @@ class MarkerWrapper extends Component {
         }
         else {
             this.props.selectCafe(this.state.cafe.name+" "+this.state.cafe.address.street);
+            this.props.setCenter(this.state.cafe.lat, this.state.cafe.lng);
         }
     }
 
@@ -37,6 +38,7 @@ class MarkerWrapper extends Component {
                         scale: 3 
                     }}
                     position={{ lat: this.state.cafe.lat, lng: this.state.cafe.lng }} 
+                    zIndex={1000}
                 />
             )
         }
