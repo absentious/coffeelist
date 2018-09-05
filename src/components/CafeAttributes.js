@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import CafeAttributes_Item from './CafeAttributes_Item';
+import CafeAttributes_Item_Vert from './CafeAttributes_Item_Vert';
 import iconData from '../data/attributeIcons.json';
 
 class CafeAttributes extends Component {
@@ -36,8 +37,8 @@ class CafeAttributes extends Component {
         if (AttrObj.display) {
             return (
                 <div class='cafeAttributes_vertical_row'>
-                    <CafeAttributes_Item 
-                        colorClass={`cafe_icon_black ${AttrObj.opacity}`}
+                    <CafeAttributes_Item_Vert 
+                        colorClass={`cafe_icon_black ${AttrObj.opacity} cafeAttributes_item_pad`}
                         svgData={AttrObj.svg}
                         size={size}
                     />
@@ -66,7 +67,7 @@ class CafeAttributes extends Component {
 
         if (this.state.vertical == false)
             return (
-                <div>
+                <div class='m_attr_holder_width'>
                     <div class='cafeAttributes_container'>
                         {this.getAttributeItem('outlets', 20)}
                         {this.getAttributeItem('wifi', 20)}

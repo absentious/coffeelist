@@ -204,6 +204,7 @@ svg .attSVG {
 
 @media screen and (max-width: 480px) {
     .cafeRow {
+        width: 100%;
     }
 
     .cafeArrow {
@@ -244,9 +245,9 @@ svg .attSVG {
     }
 
     .cafeDistance {
-        width: 15%;
-        min-width: 15%;
-        margin-right: $mpad-normal;
+        width: 18%;
+        min-width: 18%;
+        margin-right: 2%;
     }
 
     .cafeDistance_text {
@@ -256,9 +257,9 @@ svg .attSVG {
     }
 
     .cafeName_container {
-        width: 60%;
-        min-width: 60%;
-        margin-right: $mpad-normal;
+        width: 57%;
+        min-width: 57%;
+        margin-right: 2%;
     }
 
     .cafeName_text {
@@ -268,6 +269,10 @@ svg .attSVG {
 
     .cafeAttributes_container {
         display: none;
+    }
+
+    .m_attr_holder_width {
+        width: 21%;
     }
 
     .m_cafeAttributes_container {
@@ -281,6 +286,7 @@ svg .attSVG {
     .cafeAttributes_vertical {
         margin-top: $mpad-normal;
         margin-bottom: $mpad-thin;
+        width: 100%;
     }
 
     .cafeAttributes_vertical_row {
@@ -294,11 +300,25 @@ svg .attSVG {
     }
 
     .cafeAttributes_item {
-        margin-right: $mpad-normal;
+        padding-left: 15%;
+        width: 33%;
+        max-width: 33%;
+        margin-right: 0;
+    }
+
+    .cafeAttributes_item_pad {
+        padding-left: 0;
+        width: 14px;
+    }
+
+    .sortArrow_padding {
+        padding-left: 15%;
     }
 
     .sortArrow {
-        margin-right: $mpad-normal;
+        width: 33%;
+        max-width: 33%;
+        margin-right: 0;
     }
 
     .mnopad {
@@ -309,18 +329,8 @@ svg .attSVG {
 @media screen and (max-width: 375px) {
     .cafeName_text {
         font-size: $smtxt-size-lg;
+        padding-top: 8px;
     }
 
-    .cafeName_container {
-        width: 60%;
-        min-width: 60%;
-    }
-
-    .cafeAttributes_item {
-        margin-right: $mpad-thin;
-    }
-
-    .sortArrow {
-        margin-right: $mpad-thin;
-    }
+    
 }

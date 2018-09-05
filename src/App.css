@@ -157,7 +157,7 @@
 
   .s_header_icon_m {
     display: block;
-    margin-top: 12px;
+    margin-top: 5px;
   }
 
   .s_header_title {
@@ -166,7 +166,7 @@
 
   .s_header_title_m {
     display: block;
-    padding-left: 12px;
+    padding-left: 6px;
     width: 20rem;
   }
 
@@ -422,6 +422,10 @@ svg .attSVG {
 }
 
 @media screen and (max-width: 480px) {
+  .cafeRow {
+    width: 100%;
+  }
+
   .cafeArrow {
     display: none;
   }
@@ -460,9 +464,9 @@ svg .attSVG {
   }
 
   .cafeDistance {
-    width: 15%;
-    min-width: 15%;
-    margin-right: 10px;
+    width: 18%;
+    min-width: 18%;
+    margin-right: 2%;
   }
 
   .cafeDistance_text {
@@ -472,9 +476,9 @@ svg .attSVG {
   }
 
   .cafeName_container {
-    width: 60%;
-    min-width: 60%;
-    margin-right: 10px;
+    width: 57%;
+    min-width: 57%;
+    margin-right: 2%;
   }
 
   .cafeName_text {
@@ -484,6 +488,10 @@ svg .attSVG {
 
   .cafeAttributes_container {
     display: none;
+  }
+
+  .m_attr_holder_width {
+    width: 21%;
   }
 
   .m_cafeAttributes_container {
@@ -497,6 +505,7 @@ svg .attSVG {
   .cafeAttributes_vertical {
     margin-top: 10px;
     margin-bottom: 6px;
+    width: 100%;
   }
 
   .cafeAttributes_vertical_row {
@@ -510,11 +519,25 @@ svg .attSVG {
   }
 
   .cafeAttributes_item {
-    margin-right: 10px;
+    padding-left: 15%;
+    width: 33%;
+    max-width: 33%;
+    margin-right: 0;
+  }
+
+  .cafeAttributes_item_pad {
+    padding-left: 0;
+    width: 14px;
+  }
+
+  .sortArrow_padding {
+    padding-left: 15%;
   }
 
   .sortArrow {
-    margin-right: 10px;
+    width: 33%;
+    max-width: 33%;
+    margin-right: 0;
   }
 
   .mnopad {
@@ -524,19 +547,7 @@ svg .attSVG {
 @media screen and (max-width: 375px) {
   .cafeName_text {
     font-size: 12px;
-  }
-
-  .cafeName_container {
-    width: 60%;
-    min-width: 60%;
-  }
-
-  .cafeAttributes_item {
-    margin-right: 6px;
-  }
-
-  .sortArrow {
-    margin-right: 6px;
+    padding-top: 8px;
   }
 }
 .modal_custom_overlay {

@@ -1,13 +1,10 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
+import Media from "react-media";
 import Select from 'react-select';
-import Modal from 'react-responsive-modal';
 import '../App.css';
-import listData from '../data/sfData.json'
-import CafeItem from './CafeItem';
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
-import AddCafeModal from './AddCafeModal';
 
 
 
@@ -36,6 +33,74 @@ const selectStyles = {
         paddingLeft: '24px', 
         fontFamily: 'Source Code Pro', 
         fontSize: '20px',
+        opacity: '0.54',
+        padding: '12px'
+        
+    }),
+    menu: styles => ({...styles, backgroundColor: '#F8F4F4', border: 'none'}),
+    valueContainer: styles => ({...styles, height: '36px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
+    control: styles => ({...styles, width: '12rem', height: '48px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
+};
+
+const selectStyles14 = {
+    option: styles => ({
+        ...styles, 
+        color: '#4B3434', 
+        paddingLeft: '16px', 
+        backgroundColor: '#F8F4F4', 
+        fontFamily: 'Source Code Pro', 
+        fontWeight: 600,
+        fontSize: '14px',
+        padding: '12px'
+    }),
+    singleValue: styles => ({
+        ...styles, 
+        color: '#4B3434', 
+        paddingLeft: '8px', 
+        fontFamily: 'Source Code Pro', 
+        fontWeight: 600,
+        fontSize: '14px'
+    }),
+    placeholder: styles => ({
+        ...styles, 
+        color: '#4B3434', 
+        paddingLeft: '16px', 
+        fontFamily: 'Source Code Pro', 
+        fontSize: '14px',
+        opacity: '0.54',
+        padding: '8px'
+        
+    }),
+    menu: styles => ({...styles, backgroundColor: '#F8F4F4', border: 'none'}),
+    valueContainer: styles => ({...styles, height: '24px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
+    control: styles => ({...styles, width: '12rem', height: '36px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
+};
+
+const selectStyles12 = {
+    option: styles => ({
+        ...styles, 
+        color: '#4B3434', 
+        paddingLeft: '24px', 
+        backgroundColor: '#F8F4F4', 
+        fontFamily: 'Source Code Pro', 
+        fontWeight: 600,
+        fontSize: '12px',
+        padding: '12px'
+    }),
+    singleValue: styles => ({
+        ...styles, 
+        color: '#4B3434', 
+        paddingLeft: '12px', 
+        fontFamily: 'Source Code Pro', 
+        fontWeight: 600,
+        fontSize: '12px'
+    }),
+    placeholder: styles => ({
+        ...styles, 
+        color: '#4B3434', 
+        paddingLeft: '24px', 
+        fontFamily: 'Source Code Pro', 
+        fontSize: '12px',
         opacity: '0.54',
         padding: '12px'
         
@@ -125,16 +190,33 @@ class LocationSwitch extends Component {
                 <div>
                     <p class='cafeName_text t_light t_tagline'>I am working in </p>
                 </div>
-                <Select
-                    defaultValue={{ label: 'San Francisco', value: 'San Francisco' }}
-                    placeholder={<p class='cafeName_text t_light'>{this.props.city.name}</p>}
-                    className="basic-single"
-                    classNamePrefix="select"
-                    value={this.state.selectedOption}
-                    onChange={this.handleChange}
-                    options={this.state.options}
-                    styles={selectStyles}
-                />
+                <Media query="(max-width: 480px)">
+                    {matches =>
+                        matches ? (
+                            <Select
+                                defaultValue={{ label: 'San Francisco', value: 'San Francisco' }}
+                                placeholder={<p class='cafeName_text t_light'>{this.props.city.name}</p>}
+                                className="basic-single"
+                                classNamePrefix="select"
+                                value={this.state.selectedOption}
+                                onChange={this.handleChange}
+                                options={this.state.options}
+                                styles={selectStyles14}
+                            />
+                        ) : (
+                            <Select
+                                defaultValue={{ label: 'San Francisco', value: 'San Francisco' }}
+                                placeholder={<p class='cafeName_text t_light'>{this.props.city.name}</p>}
+                                className="basic-single"
+                                classNamePrefix="select"
+                                value={this.state.selectedOption}
+                                onChange={this.handleChange}
+                                options={this.state.options}
+                                styles={selectStyles}
+                            />
+                        )
+                    }
+                </Media>
             </div>
         )
     }

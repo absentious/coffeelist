@@ -136,8 +136,8 @@ class SortBar extends Component {
                             </div>
                         </div>
                     </div>
-                    <div class='m_cafeAttributes_container'>
-                        <div class='sortArrow' onClick={this.sortOutlet.bind(this)}>
+                    <div class='m_cafeAttributes_container m_attr_holder_width'>
+                        <div class='sortArrow sortArrow_padding' onClick={this.sortOutlet.bind(this)}>
                             <div class='cafeArrow'>
                                 <Icon 
                                     colorClass="cafe_icon_black"
@@ -153,7 +153,7 @@ class SortBar extends Component {
                                 />
                             </div>
                         </div>
-                        <div class='sortArrow' onClick={this.sortWifi.bind(this)}>
+                        <div class='sortArrow sortArrow_padding' onClick={this.sortWifi.bind(this)}>
                             <div class='cafeArrow'>
                                 <Icon 
                                     colorClass="cafe_icon_black"
@@ -169,7 +169,7 @@ class SortBar extends Component {
                                 />
                             </div>
                         </div>
-                        <div class='sortArrow' onClick={this.sortFood.bind(this)}>
+                        <div class='sortArrow sortArrow_padding' onClick={this.sortFood.bind(this)}>
                             <div class='cafeArrow'>
                                 <Icon 
                                     colorClass="cafe_icon_black"
