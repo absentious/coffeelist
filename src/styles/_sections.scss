@@ -117,11 +117,12 @@
     .s_topSpace {
         margin-top: $pad-thin;
         margin-left: 0;
-        margin-right:0;
+        margin-right: 0;
+        margin-top: 0;
     }
 
     .s_header {
-        margin-bottom: 2vh;
+        margin-bottom: 1vh;
     }
 
     .s_main {
@@ -140,6 +141,7 @@
     .s_map_m {
         display: block;
         width: 100%;
+        margin-bottom: 1vh;
     }
 
     .s_splitscreen {
@@ -191,8 +193,7 @@
     }
 
     .s_list {
-        height: 57vh;
-        margin-bottom: 2vh;
+        height: 53vh;
     }
 }
 
@@ -200,23 +201,13 @@
 }
 
 @media screen and (max-width: 360px) {
-    .s_topSpace {
-        margin-top: 0;
-    }
-
-    .s_header {
-        margin-bottom: 1vh;
-    }
 
     .s_header_title_light {
         display: none;
     }
 
     .s_list {
-        height: 55vh;
-    }
-    .s_map_m {
-        margin-bottom: 1vh;
+        height: 51vh;
     }
 }
 

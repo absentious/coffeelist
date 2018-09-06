@@ -119,10 +119,11 @@
     margin-top: 12px;
     margin-left: 0;
     margin-right: 0;
+    margin-top: 0;
   }
 
   .s_header {
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
   }
 
   .s_main {
@@ -141,6 +142,7 @@
   .s_map_m {
     display: block;
     width: 100%;
+    margin-bottom: 1vh;
   }
 
   .s_splitscreen {
@@ -192,29 +194,16 @@
   }
 
   .s_list {
-    height: 57vh;
-    margin-bottom: 2vh;
+    height: 53vh;
   }
 }
 @media screen and (max-width: 360px) {
-  .s_topSpace {
-    margin-top: 0;
-  }
-
-  .s_header {
-    margin-bottom: 1vh;
-  }
-
   .s_header_title_light {
     display: none;
   }
 
   .s_list {
-    height: 55vh;
-  }
-
-  .s_map_m {
-    margin-bottom: 1vh;
+    height: 51vh;
   }
 }
 .t_header {
@@ -347,11 +336,15 @@
 .cafeAddress {
   margin-top: 24px;
   margin-right: 24px;
-  margin-left: 24px;
 }
 
 .m_cafeAddress {
   display: none;
+}
+
+.cafeAddress_topline {
+  display: flex;
+  flex-direction: row;
 }
 
 .cafeAddress_text {
@@ -360,7 +353,6 @@
 }
 
 .cafeAttributes_container {
-  margin-left: 24px;
   margin-right: 12px;
   display: flex;
   flex-direction: row;
@@ -434,6 +426,11 @@
 
 .nopad {
   margin-bottom: 0;
+}
+
+.cafeNav {
+  padding-top: 2px;
+  text-align: right;
 }
 
 .sortArrow {
@@ -573,6 +570,10 @@ svg .attSVG {
   .cafeAttributes_item_pad {
     padding-left: 0;
     width: 14px;
+  }
+
+  .cafeNav {
+    margin-left: 24px;
   }
 
   .sortArrow_padding {

@@ -87,17 +87,20 @@
 .cafeName_text {
     font-family: $font-family-1;
     font-size: $txt-size-lg;
-    
 }
 
 .cafeAddress {
     margin-top: $pad-normal;
     margin-right: $pad-normal;
-    margin-left: $pad-normal;
 }
 
 .m_cafeAddress {
     display: none;
+}
+
+.cafeAddress_topline {
+    display: flex;
+    flex-direction: row;
 }
 
 .cafeAddress_text {
@@ -106,7 +109,6 @@
 }
 
 .cafeAttributes_container {
-    margin-left: $pad-normal;
     margin-right: $pad-thin;
     display: flex;
     flex-direction: row;
@@ -185,6 +187,11 @@
 
 .sortName {
     
+}
+
+.cafeNav {
+    padding-top: 2px;
+    text-align: right;
 }
 
 .sortArrow {
@@ -326,6 +333,10 @@ svg .attSVG {
     .cafeAttributes_item_pad {
         padding-left: 0;
         width: 14px;
+    }
+
+    .cafeNav {
+        margin-left: $pad-normal;
     }
 
     .sortArrow_padding {

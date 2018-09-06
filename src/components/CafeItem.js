@@ -7,6 +7,8 @@ import * as actions from '../redux/actions';
 import CafeNeighborhood from './CafeNeighborhood';
 import CafeAttributes from './CafeAttributes';
 import CafeName from './CafeName';
+import Icon from './Icon';
+import iconData from '../data/generalIcons.json';
 
 class CafeItem extends Component {
     constructor () {
@@ -85,8 +87,11 @@ class CafeItem extends Component {
             return (
                 <div>
                     <div class='cafeAddress'>
-                        <p class='cafeAddress_text t_bold'>
-                            {this.state.cafe.neighborhood} </p>
+                        <div class='cafeAddress_topline'>
+                            <p class='cafeAddress_text t_bold'>
+                                {this.state.cafe.neighborhood} 
+                            </p>
+                        </div>
                         <p class='cafeAddress_text t_light'>
                             {this.state.cafe.address.street} <br />
                             {this.state.cafe.address.citystate} <br />
@@ -110,6 +115,22 @@ class CafeItem extends Component {
                         </p>
                     </div>
                 </div>
+            )
+        }
+    }
+
+    displayNav() {
+        if (this.props.selected) {
+            return (
+                <p class='cafeAddress cafeNav'>
+                    <a href={`https://maps.google.com/maps?daddr=${this.state.cafe.lat},${this.state.cafe.lng}&amp;ll=`}>
+                        <Icon 
+                            colorClass="cafe_icon_black"
+                            svgData={iconData.navigate.svg}
+                            size="20"
+                        />
+                    </a>
+                </p>
             )
         }
     }
@@ -152,6 +173,7 @@ class CafeItem extends Component {
                 <div class='cafeRow' onClick={this.selectionProcess.bind(this)}>
                     <div class='cafeDistance'>
                         <p class='cafeDistance_text t_light'>{this.distance(this.state.cafe.lat, this.state.cafe.lng, this.props.lat, this.props.lng, "M")} mi</p>
+                        {this.displayNav()}
                     </div>
                     <CafeName name={this.state.name}>
                         {this.displayAddress()}
