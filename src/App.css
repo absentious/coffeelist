@@ -197,13 +197,20 @@
   }
 }
 @media screen and (max-width: 360px) {
+  .s_topSpace {
+    margin-top: 0;
+  }
+
   .s_header {
     margin-bottom: 2vh;
-    height: 20vh;
   }
 
   .s_header_title_light {
     display: none;
+  }
+
+  .s_list {
+    height: 58vh;
   }
 }
 .t_header {
@@ -582,6 +589,22 @@ svg .attSVG {
   .cafeName_text {
     font-size: 12px;
     padding-top: 8px;
+  }
+
+  .cafePad {
+    padding-bottom: 16px;
+  }
+
+  .cafeAddress_text {
+    font-size: 12px;
+  }
+
+  .cafeAttributes_vertical_text {
+    font-size: 12px;
+  }
+
+  .cafeAttributes_item_pad {
+    margin-top: 0;
   }
 }
 .modal_custom_overlay {

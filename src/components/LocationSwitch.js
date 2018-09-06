@@ -84,17 +84,17 @@ const selectStyles12 = {
     option: styles => ({
         ...styles, 
         color: '#4B3434', 
-        paddingLeft: '24px', 
+        paddingLeft: '12px', 
         backgroundColor: '#F8F4F4', 
         fontFamily: 'Source Code Pro', 
         fontWeight: 600,
         fontSize: '12px',
-        padding: '12px'
+        padding: '8px'
     }),
     singleValue: styles => ({
         ...styles, 
         color: '#4B3434', 
-        paddingLeft: '12px', 
+        paddingLeft: '8px', 
         fontFamily: 'Source Code Pro', 
         fontWeight: 600,
         fontSize: '12px'
@@ -102,16 +102,16 @@ const selectStyles12 = {
     placeholder: styles => ({
         ...styles, 
         color: '#4B3434', 
-        paddingLeft: '24px', 
+        paddingLeft: '12px', 
         fontFamily: 'Source Code Pro', 
         fontSize: '12px',
         opacity: '0.54',
-        padding: '12px'
+        padding: '8px'
         
     }),
     menu: styles => ({...styles, backgroundColor: '#F8F4F4', border: 'none'}),
-    valueContainer: styles => ({...styles, height: '36px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
-    control: styles => ({...styles, width: '10rem', height: '48px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
+    valueContainer: styles => ({...styles, height: '24px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
+    control: styles => ({...styles, width: '8rem', height: '36px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
 };
 
 class LocationSwitch extends Component {
@@ -197,16 +197,33 @@ class LocationSwitch extends Component {
                 <Media query="(max-width: 480px)">
                     {matches =>
                         matches ? (
-                            <Select
-                                defaultValue={{ label: 'San Francisco', value: 'San Francisco' }}
-                                placeholder={<p class='cafeName_text t_light'>{this.props.city.name}</p>}
-                                className="basic-single"
-                                classNamePrefix="select"
-                                value={this.state.selectedOption}
-                                onChange={this.handleChange}
-                                options={this.state.options}
-                                styles={selectStyles14}
-                            />
+                            <Media query="(max-width: 480px)">
+                                {matches =>
+                                    matches ? (
+                                        <Select
+                                            defaultValue={{ label: 'San Francisco', value: 'San Francisco' }}
+                                            placeholder={<p class='cafeName_text t_light'>{this.props.city.name}</p>}
+                                            className="basic-single"
+                                            classNamePrefix="select"
+                                            value={this.state.selectedOption}
+                                            onChange={this.handleChange}
+                                            options={this.state.options}
+                                            styles={selectStyles12}
+                                        />
+                                    ) : (
+                                        <Select
+                                            defaultValue={{ label: 'San Francisco', value: 'San Francisco' }}
+                                            placeholder={<p class='cafeName_text t_light'>{this.props.city.name}</p>}
+                                            className="basic-single"
+                                            classNamePrefix="select"
+                                            value={this.state.selectedOption}
+                                            onChange={this.handleChange}
+                                            options={this.state.options}
+                                            styles={selectStyles14}
+                                        />
+                                    )
+                                }
+                            </Media>
                         ) : (
                             <Select
                                 defaultValue={{ label: 'San Francisco', value: 'San Francisco' }}

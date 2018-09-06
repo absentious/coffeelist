@@ -349,5 +349,19 @@ svg .attSVG {
         padding-top: 8px;
     }
 
-    
+    .cafePad {
+        padding-bottom: 16px;
+    }
+
+    .cafeAddress_text {
+        font-size: $smtxt-size-lg;
+    }
+
+    .cafeAttributes_vertical_text {
+        font-size: $smtxt-size-lg;
+    }
+
+    .cafeAttributes_item_pad {
+        margin-top: 0;
+    }
 }

@@ -200,13 +200,20 @@
 }
 
 @media screen and (max-width: 360px) {
+    .s_topSpace {
+        margin-top: 0;
+    }
+
     .s_header {
         margin-bottom: 2vh;
-        height: 20vh
     }
 
     .s_header_title_light {
         display: none;
+    }
+
+    .s_list {
+        height: 58vh;
     }
 }
 
