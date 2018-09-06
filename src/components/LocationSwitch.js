@@ -197,7 +197,7 @@ class LocationSwitch extends Component {
                 <Media query="(max-width: 480px)">
                     {matches =>
                         matches ? (
-                            <Media query="(max-width: 480px)">
+                            <Media query="(max-width: 360px)">
                                 {matches =>
                                     matches ? (
                                         <Select

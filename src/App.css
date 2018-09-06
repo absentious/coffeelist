@@ -192,7 +192,7 @@
   }
 
   .s_list {
-    height: 60vh;
+    height: 57vh;
     margin-bottom: 2vh;
   }
 }
@@ -202,7 +202,7 @@
   }
 
   .s_header {
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
   }
 
   .s_header_title_light {
@@ -210,7 +210,11 @@
   }
 
   .s_list {
-    height: 58vh;
+    height: 55vh;
+  }
+
+  .s_map_m {
+    margin-bottom: 1vh;
   }
 }
 .t_header {

@@ -77,6 +77,10 @@ class App extends Component {
                                     <div>
                                         <AddCafeModal_Container />
                                     </div>
+
+                                    <div class='s_map_m'>
+                                        <MapWrapperMobile />
+                                    </div>
                                     <SortBar />
 
                                     <div class='s_main'>
@@ -90,9 +94,6 @@ class App extends Component {
 
                             <div class='s_map'>
                                 <MapWrapper />
-                            </div>
-                            <div class='s_map_m'>
-                                <MapWrapperMobile />
                             </div>
                         </div>
                     </div>
