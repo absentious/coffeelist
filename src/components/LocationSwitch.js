@@ -77,7 +77,7 @@ const selectStyles14 = {
     }),
     menu: styles => ({...styles, backgroundColor: '#F8F4F4', border: 'none'}),
     valueContainer: styles => ({...styles, height: '24px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
-    control: styles => ({...styles, width: '12rem', height: '36px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
+    control: styles => ({...styles, width: '10rem', height: '36px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
 };
 
 const selectStyles12 = {
@@ -111,7 +111,7 @@ const selectStyles12 = {
     }),
     menu: styles => ({...styles, backgroundColor: '#F8F4F4', border: 'none'}),
     valueContainer: styles => ({...styles, height: '36px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
-    control: styles => ({...styles, width: '12rem', height: '48px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
+    control: styles => ({...styles, width: '10rem', height: '48px', color: '#4B3434', backgroundColor: '#F8F4F4'}),
 };
 
 class LocationSwitch extends Component {
@@ -191,7 +191,7 @@ class LocationSwitch extends Component {
     render () {
         return (
             <div class='s_location'>
-                <div>
+                <div class='cafeSwitch_text'>
                     <p class='cafeName_text t_light t_tagline'>I am working in </p>
                 </div>
                 <Media query="(max-width: 480px)">

@@ -80,8 +80,8 @@
 }
 
 .cafeName_container {
-    width: 18rem;
-    min-width: 18rem;
+    width: 22rem;
+    min-width: 22rem;
 }
 
 .cafeName_text {
@@ -201,10 +201,27 @@ svg .attSVG {
     height: $txt-size-lg;
 }
 
+@media screen and (max-width: 1440px) {
+    .cafeName_container {
+        width: 20rem;
+        min-width: 20rem;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .cafeName_container {
+        width: 18rem;
+        min-width: 18rem;
+    }
+}
 
 @media screen and (max-width: 480px) {
     .cafeRow {
         width: 100%;
+    }
+
+    .cafeSwitch_text {
+        display: none;
     }
 
     .cafeArrow {

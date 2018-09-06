@@ -11,6 +11,7 @@ import './App.css';
 import CafeList from './components/CafeList';
 import SortBar from './components/SortBar';
 import MapWrapper from './components/MapWrapper';
+import MapWrapperMobile from './components/MapWrapperMobile';
 import AddCafeButton from './components/AddCafeButton';
 import AddCafeModal_Container from './components/AddCafeModal_Container';
 import UserReduxForm_Container from './components/UserReduxForm_Container';
@@ -89,6 +90,9 @@ class App extends Component {
 
                             <div class='s_map'>
                                 <MapWrapper />
+                            </div>
+                            <div class='s_map_m'>
+                                <MapWrapperMobile />
                             </div>
                         </div>
                     </div>
