@@ -3,6 +3,7 @@ import '../App.css';
 import { Marker } from "react-google-maps";
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
+import iconData from '../data/generalIcons.json';
 
 class MarkerWrapper extends Component {
     constructor () {
@@ -31,26 +32,32 @@ class MarkerWrapper extends Component {
     displayMarker() {
         if (this.props.selected) {
             return (
-                <Marker 
+                <Marker
                     onClick={this.selectionProcess.bind(this)}
-                    icon={{ 
-                        url: "http://ayh.io/images/pin_selected.png",
-                        scale: 3 
+                    icon={{
+                        path: iconData.pin.svg,
+                        fillColor: '#2CC761',
+                        fillOpacity: 1,
+                        strokeOpacity: 0,
+                        anchor: { x: 15, y: 31 }
                     }}
-                    position={{ lat: this.state.cafe.lat, lng: this.state.cafe.lng }} 
+                    position={{ lat: this.state.cafe.lat, lng: this.state.cafe.lng }}
                     zIndex={1000}
                 />
             )
         }
         else {
             return (
-                <Marker 
+                <Marker
                     onClick={this.selectionProcess.bind(this)}
-                    icon={{ 
-                        url: "http://ayh.io/images/pin_general.png",
-                        scale: 2
+                    icon={{
+                        path: iconData.pin.svg,
+                        fillColor: '#252222',
+                        fillOpacity: 1,
+                        strokeOpacity: 0,
+                        anchor: { x: 15, y: 31 }
                     }}
-                    position={{ lat: this.state.cafe.lat, lng: this.state.cafe.lng }} 
+                    position={{ lat: this.state.cafe.lat, lng: this.state.cafe.lng }}
                 />
             )
         }

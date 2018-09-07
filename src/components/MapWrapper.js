@@ -7,12 +7,13 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker, SearchBox } from "react
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
 import MarkerWrapper from './MarkerWrapper';
+import iconData from '../data/generalIcons.json';
 
 const MAPAPIKEY = "AIzaSyBABXrbgUP5XYi-sGHvJ_R9KuLlugctX8s";
 
 const MapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
-        defaultZoom={11}
+        defaultZoom={12}
         center={{ lat: props.city.lat, lng: props.city.lng }}
         options={{ styles: [
             {
@@ -196,6 +197,18 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>
     >
 
         {props.cafes.map(item => <MarkerWrapper cafe={item} key={item.name+" "+item.address.street}/>)}
+
+        <Marker
+            icon={{
+                path: props.locationSvg,
+                fillColor: '#0d95d4',
+                fillOpacity: 1,
+                strokeOpacity: 0,
+                anchor: { x: 15, y: 15 }
+            }}
+            position={{ lat: props.lat, lng: props.lng }}
+            zIndex={1000}
+        />
         
     </GoogleMap>
 ))
@@ -218,6 +231,9 @@ class MapWrapper extends Component {
                 mapElement={<div style={{ height: `100vh` }} />}
                 cafes={this.props.cafes}
                 city={this.props.city}
+                lat={this.props.lat}
+                lng={this.props.lng}
+                locationSvg={iconData.yourlocation.svg}
             />
         )
     }
@@ -228,8 +244,10 @@ const mapStateToProps = state => {
         return { ...val, uid };
     });
     const city = state.city;
+    const lat = state.location.lat;
+    const lng = state.location.lng;
 
-    return { cafes, city };
+    return { cafes, city, lat, lng };
 };
 
 export default connect(mapStateToProps, actions)(MapWrapper);

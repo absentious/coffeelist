@@ -247,7 +247,6 @@ class LocationSwitch extends Component {
 
 const mapStateToProps = state => {
     const city = state.city;
-    console.log(city);
     return { city };
 };
 
