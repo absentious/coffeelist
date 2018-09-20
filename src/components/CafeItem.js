@@ -41,6 +41,7 @@ class CafeItem extends Component {
         //var topPos = document.getElementById('s_list').offsetTop;
         var scrollElement = document.getElementById(this.props.selectedName);
         scrollElement.scrollIntoView();
+        window.scrollBy(0, -15);
         
     }
 
@@ -164,7 +165,12 @@ class CafeItem extends Component {
         dist = dist * 60 * 1.1515
         if (unit=="K") { dist = dist * 1.609344 }
         if (unit=="N") { dist = dist * 0.8684 }
-        return dist.toFixed(1);
+
+        var dec = 1;
+        if (dist > 99.9) {
+            dec = 0;
+        }
+        return dist.toFixed(dec);
     }
 
     render () {
