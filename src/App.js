@@ -87,15 +87,16 @@ class App extends Component {
                                         <CafeList />
                                     </div>
                                 </div>
-                                <div class='s_user'>
-                                    <UserReduxForm_Container />
-                                </div>
                             </div>
 
                             <div class='s_map'>
                                 <MapWrapper />
                             </div>
                         </div>
+                    </div>
+
+                    <div class='s_user'>
+                        <UserReduxForm_Container />
                     </div>
                 </div>
             </Provider>
