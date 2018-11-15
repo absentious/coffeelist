@@ -15,9 +15,11 @@ import MapWrapperMobile from './components/MapWrapperMobile';
 import AddCafeButton from './components/AddCafeButton';
 import AddCafeModal_Container from './components/AddCafeModal_Container';
 import UserReduxForm_Container from './components/UserReduxForm_Container';
+import ReactGA from 'react-ga';
 
 import iconData from './data/attributeIcons.json';
 import LocationSwitch from './components/LocationSwitch';
+
 
 class App extends Component {
 
@@ -25,7 +27,8 @@ class App extends Component {
         super();
 
         this.state = {
-            open: false
+            open: false,
+            reactGaInitialized: false,
         }
     }
 
@@ -41,6 +44,14 @@ class App extends Component {
         firebase.initializeApp(config);
         document.title = 'caffinity - your cafe grind resource'
 
+    }
+
+    componentDidMount() {
+        if (!this.state.reactGaInitialized) {
+            ReactGA.initialize('UA-129274213-1');
+            this.setState({reactGaInitialized: true})
+        }
+        ReactGA.pageview(window.location.pathname + window.location.search);
     }
 
     render() {
